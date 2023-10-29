@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.animate-spin {
+    animation: spin 4s linear infinite;
+}
+
