@@ -1,5 +1,6 @@
 import "./App.css";
 import { BiLogoInstagram } from "react-icons/bi";
+import CountdownComponent from "./component/countdown";
 
 function App() {
   return (
@@ -183,6 +184,15 @@ function App() {
           <div className="scale-125">
             <img src="./assets/gantungan.png" alt="gantungan" width={400} />
           </div>
+        </div>
+      </section>
+
+      <section id="countdown">
+        <div
+          className="w-full overflow-hidden relative gap-5 h-screen flex flex-col justify-center items-center bg-accent"
+          style={{ fontFamily: "Cardo" }}
+        >
+          <CountdownComponent />
         </div>
       </section>
     </>
