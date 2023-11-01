@@ -99,14 +99,8 @@ function App() {
 
       <section id="event">
         <div className="w-full overflow-hidden relative h-screen flex flex-col justify-center items-center bg-accent">
-          {/* <img
-            className="-ml-5 mb-5"
-            src="./assets/cincin.png"
-            alt="cincin"
-            width={80}
-          /> */}
           <div className="w-full flex items-start justify-start">
-            <div className="text-center mx-5">
+            <div className="text-center mx-5 -mt-10">
               <p className="text-4xl" style={{ fontFamily: "Cardo-bold" }}>
                 Akad
               </p>
@@ -147,11 +141,47 @@ function App() {
             <p className="text-lg">Kec. Duren Kab.Kelapakuningan</p>
           </div>
 
-          <div className="relative">
-            <img src="./assets/maps.png" alt="maps" width={180} />
-            <div className="absolute bottom-0 right-0">
-              <img src="./assets/hiasanbunga.png" alt="hiasan" width={80} />
+          <div className="relative place-content-center items-center justify-center flex flex-col">
+            <img src="./assets/maps.png" alt="maps" width={170} />
+            <div className="absolute -bottom-[30%] -right-[30%]">
+              <img src="./assets/hiasanbunga.png" alt="hiasan" width={70} />
             </div>
+            <div className="absolute -bottom-[30%] -left-[30%] -scale-x-100">
+              <img src="./assets/hiasanbunga.png" alt="hiasan" width={70} />
+            </div>
+            <button className="absolute bottom-3 bg-secondary px-5 gap-2 py-1 rounded-2xl text-white flex items-center">
+              <img src="./assets/imaps.png" alt="imaps" width={15} />
+              Lihat Maps
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="galeri">
+        <div
+          className="w-full overflow-hidden relative gap-5 h-screen flex flex-col justify-center items-center bg-accent"
+          style={{ fontFamily: "Cardo" }}
+        >
+          <div className="w-full flex flex-col items-center">
+            <div className="-ml-5">
+              <img src="./assets/cincin.png" alt="cincin" width={100} />
+            </div>
+            <h1 className="text-4xl font-medium text-center mx-16">
+              Kisah kita berdua
+            </h1>
+          </div>
+
+          <div className="flex w-full items-center justify-center flex-wrap">
+            <img src="./assets/foto.png" alt="foto" width={120} />
+            <img src="./assets/foto1.png" alt="foto1" width={120} />
+            <img src="./assets/foto2.png" alt="foto2" width={120} />
+            <img src="./assets/foto3.png" alt="foto3" width={120} />
+            <img src="./assets/foto4.png" alt="foto4" width={120} />
+            <img src="./assets/foto5.png" alt="foto5" width={120} />
+          </div>
+
+          <div className="scale-125">
+            <img src="./assets/gantungan.png" alt="gantungan" width={400} />
           </div>
         </div>
       </section>

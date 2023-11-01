@@ -8,6 +8,7 @@ module.exports = {
       secondary: "#EE6983",
       accent: "#FFFAEA",
       third: "#C27F5C",
+      white: "#FFFFFF",
     },
   },
   plugins: [],
