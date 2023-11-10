@@ -41,10 +41,9 @@ const CountdownComponent = ({
 
       setCountdownValue({ days, hours, minutes, seconds });
     };
+    const interval = setInterval(calculateCountdown, 1000);
 
     calculateCountdown(); // Hitung hitungan mundur saat komponen pertama kali dimuat
-
-    const interval = setInterval(calculateCountdown, 1000);
 
     return () => clearInterval(interval);
   }, [targetMonth, targetDate, targetHour, targetMinute]);
