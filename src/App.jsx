@@ -27,7 +27,7 @@ function App() {
       mirror: true,
       anchorPlacement: "top-bottom",
     });
-    handleAudio();
+    // handleAudio();
   }, []);
 
   function submitGreeting(e) {
@@ -48,22 +48,22 @@ function App() {
     window.location.href = whatsappURL;
   }
 
-  function handleAudio() {
-    const audio = document.getElementById("audio");
-    const disc = document.getElementById("disc");
-    audio.play();
-    if (playSong) {
-      audio.play();
-      disc.classList.add("animate-spin");
-    } else {
-      audio.pause();
-      disc.classList.remove("animate-spin");
-    }
-  }
+  // function handleAudio() {
+  //   const audio = document.getElementById("audio");
+  //   const disc = document.getElementById("disc");
+  //   audio.play();
+  //   if (playSong) {
+  //     audio.play();
+  //     disc.classList.add("animate-spin");
+  //   } else {
+  //     audio.pause();
+  //     disc.classList.remove("animate-spin");
+  //   }
+  // }
 
   function handleCover() {
     setOpenCover(true);
-    handleAudio();
+    // handleAudio();s
   }
 
   const queryParameters = new URLSearchParams(window.location.search);
