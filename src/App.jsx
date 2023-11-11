@@ -125,7 +125,7 @@ function App() {
             <div className="absolute w-full -z-20 top-0 scale-125">
               <img src="./assets/awan.png" alt="awan" />
             </div>
-            <div className="text-white font-cardo">
+            <div className="text-white">
               <h1>THE WEDDING OF</h1>
             </div>
           </section>
