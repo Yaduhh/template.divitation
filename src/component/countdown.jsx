@@ -52,7 +52,7 @@ const CountdownComponent = ({
   return (
     <>
       <div className="flex justify-center font-Courgette">
-        <div className="grid grid-flow-col gap-2 text-center auto-cols-max">
+        <div className="grid grid-flow-col gap-2 md:gap-6 text-center auto-cols-max">
           <div>
             <div
               className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
