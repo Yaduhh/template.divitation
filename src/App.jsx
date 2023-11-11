@@ -3,11 +3,9 @@ import "./App.css";
 import { useEffect } from "react";
 import Aos from "aos";
 import NavigationBottom from "./components/bottom-navigation";
-import copyToClipboard from "./helpers/copyClipboard";
 import DiskAudio from "./components/disk-audio";
 import classNames from "classnames";
 import CoverScreen from "./screens/cover";
-import { FaPauseCircle } from "react-icons/fa";
 
 function App() {
   const [openCover, setOpenCover] = useState(false);
@@ -107,21 +105,29 @@ function App() {
           !openCover ? "hidden" : "flex justify-center w-full bg-[#d5e9e2]"
         )}
       >
-        <div className="w-[428px] h-full relative">
+        <div className="w-full max-w-3xl h-full relative">
           <DiskAudio
-            className="bg-[#3C6255]"
+            className="bg-[#0E0E0E]"
             src={"audio/maherzain.mp3"}
             playSong={playSong}
             setplaySong={setplaySong}
           />
 
-          <NavigationBottom className={"bg-[#3C6255]"} />
+          <NavigationBottom className={"bg-[#0E0E0E]"} />
 
           <section
-            className="h-screen bg-[#F5F0F4] flex flex-col items-center justify-evenly"
+            className="h-screen relative -z-0 bg-[#F5F0F4] flex flex-col items-center justify-evenly overflow-hidden"
             id="home"
           >
-            Home
+            <div className="absolute w-full -z-20">
+              <img src="./assets/cover.jpg" alt="cover" />
+            </div>
+            <div className="absolute w-full -z-20 top-0 scale-125">
+              <img src="./assets/awan.png" alt="awan" />
+            </div>
+            <div className="text-white font-cardo">
+              <h1>THE WEDDING OF</h1>
+            </div>
           </section>
           <section
             className="h-screen bg-[#F5F0F4] flex flex-col items-center justify-evenly"

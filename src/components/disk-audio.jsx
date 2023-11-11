@@ -6,7 +6,7 @@ export default function DiskAudio({ playSong, setplaySong, src, className }) {
   return (
     <div className="relative flex justify-end pr-8">
       <div
-        className={classNames(`play-pause-wraper fixed bottom-28 z-[99999]`)}
+        className={classNames(`play-pause-wraper fixed bottom-20 z-[99999]`)}
       >
         <audio hidden autoPlay loop id="audio">
           <source src={src} type="audio/mpeg" />
