@@ -66,8 +66,8 @@ function App() {
       mirror: true,
       anchorPlacement: "top-bottom",
     });
-    // handleAudio();
-  }, []);
+    handleAudio();
+  }, [playSong]);
 
   function submitGreeting(e) {
     e.preventDefault();
