@@ -31,7 +31,8 @@ function App() {
       mirror: true,
       anchorPlacement: "top-bottom",
     });
-  }, []);
+    handleAudio();
+  }, [playSong]);
 
   function submitGreeting(e) {
     e.preventDefault();
@@ -108,13 +109,13 @@ function App() {
       >
         <div className="w-[428px] h-full relative">
           <DiskAudio
-            bgHex={"3C6255"}
+            className="bg-[#3C6255]"
             src={"audio/maherzain.mp3"}
             playSong={playSong}
             setplaySong={setplaySong}
           />
 
-          <NavigationBottom bgColor={"3C6255"} />
+          <NavigationBottom className={"bg-[#3C6255]"} />
 
           <section
             className="h-screen bg-[#F5F0F4] flex flex-col items-center justify-evenly"

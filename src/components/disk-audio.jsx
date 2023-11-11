@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React from "react";
 import { FaPauseCircle } from "react-icons/fa";
 
-export default function DiskAudio({ playSong, setplaySong, src, bgHex }) {
+export default function DiskAudio({ playSong, setplaySong, src, className }) {
   return (
     <div className="relative flex justify-end pr-8">
       <div
@@ -14,7 +14,8 @@ export default function DiskAudio({ playSong, setplaySong, src, bgHex }) {
         <button
           id="play-pause-btn"
           className={classNames(
-            `w-10 h-10 rounded-full border-2 border-base-300 flex items-center justify-center bg-[#${bgHex}] p-1 box-content`
+            `w-10 h-10 rounded-full border-2 border-base-300 flex items-center justify-center  p-1 box-content`,
+            className
           )}
           onClick={() => setplaySong((prev) => !prev)}
         >
