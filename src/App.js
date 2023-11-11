@@ -1,6 +1,7 @@
 import "./App.css";
 import { BiLogoInstagram } from "react-icons/bi";
 import CountdownComponent from "./component/countdown";
+import Gift from "./component/gift";
 
 function App() {
   return (
@@ -27,6 +28,55 @@ function App() {
           <div className="absolute left-6 bottom-[10%]">
             <img src="./assets/accent.png" alt="accent" width={50} />
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div
+          className="w-full overflow-hidden relative gap-10 h-screen flex flex-col justify-center items-center bg-accent"
+          style={{ fontFamily: "Cardo" }}
+        >
+          <div className="flex flex-col w-full items-center -mt-10 gap-5">
+            <img src="./assets/hero.png" alt="hero" width={60} />
+            <img src="./assets/bismillah.png" alt="bismillah" width={250} />
+          </div>
+          <p className="text-center">
+            Assalamualaikum <br /> Waarohmatullahi Wabarokaatuh
+          </p>
+          <div className="text-center px-7 relative">
+            <p>
+              Maha suci Allah yang telah menciptakan makhluk-Nya
+              berpasang-pasangan. <br />
+              <br /> Ya Allah, perkenankanlah kami merangkaikan kasih sayang
+              yang Kau ciptakan diantara kami untuk mengikuti Sunnah Rasul-Mu
+              dalam rangka membentuk keluarga yang sakinah, mawaddah, warahmah.
+            </p>
+            <img
+              className="absolute top-0 right-5"
+              src="./assets/petik.png"
+              alt="petiks"
+              width={20}
+            />
+            <img
+              className="absolute bottom-0 left-5 -scale-100"
+              src="./assets/petik.png"
+              alt="petiks"
+              width={20}
+            />
+          </div>
+          <img
+            className="absolute top-36 right-12"
+            src="./assets/accent.png"
+            alt="accent"
+            width={40}
+          />
+          <img
+            className="absolute bottom-36 left-12"
+            src="./assets/accent.png"
+            alt="accent"
+            width={40}
+          />
+          <div className="w-full bg-[#FFE9CC] absolute h-28 bottom-5"></div>
         </div>
       </section>
 
@@ -118,7 +168,7 @@ function App() {
             </div>
           </div>
 
-          <div className="text-center mb-8 -z-0 relative w-full flex flex-col items-center">
+          <div className="text-center mb-8 -z-0 relative w-full flex flex-col items-center mt-5">
             <p
               className="text-4xl bg-accent italic"
               style={{ fontFamily: "Cardo-bold" }}
@@ -143,11 +193,11 @@ function App() {
           </div>
 
           <div className="relative place-content-center items-center justify-center flex flex-col">
-            <img src="./assets/maps.png" alt="maps" width={170} />
-            <div className="absolute -bottom-[30%] -right-[30%]">
+            <img src="./assets/maps.png" alt="maps" width={250} />
+            <div className="absolute -bottom-[30%] -right-[20%]">
               <img src="./assets/hiasanbunga.png" alt="hiasan" width={70} />
             </div>
-            <div className="absolute -bottom-[30%] -left-[30%] -scale-x-100">
+            <div className="absolute -bottom-[30%] -left-[20%] -scale-x-100">
               <img src="./assets/hiasanbunga.png" alt="hiasan" width={70} />
             </div>
             <button className="absolute bottom-3 bg-secondary px-5 gap-2 py-1 rounded-2xl text-white flex items-center">
@@ -189,10 +239,74 @@ function App() {
 
       <section id="countdown">
         <div
+          className="w-full overflow-hidden relative gap-10 h-screen flex flex-col justify-center items-center bg-accent"
+          style={{ fontFamily: "Cardo" }}
+        >
+          <div className="text-center">
+            <p className="text-xl">Terhitung mundur dari sekarang</p>
+            <p className="text-4xl font-medium">Menuju Hari H</p>
+          </div>
+          <CountdownComponent
+            targetMonth={12}
+            targetDate={22}
+            targetHour={30}
+            targetMinute={20}
+          />
+          <p className="text-4xl font-medium text-center">
+            Ucapan <br />
+            ke Pengantin
+          </p>
+          <div className="w-full px-5 flex flex-col gap-5 items-end">
+            <input
+              className="w-full py-2 px-5 rounded-xl bg-white focus:outline-1 outline-secondary"
+              placeholder="Nama Pengirim"
+            />
+            <textarea
+              className="w-full py-2 px-5 pb-10 rounded-xl bg-white focus:outline-1 outline-secondary"
+              placeholder="Kalimat ucapan untuk mempelai"
+            />
+            <div>
+              <button className="px-10 py-2 rounded-xl bg-secondary text-white">
+                Kirim
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gift">
+        <div
           className="w-full overflow-hidden relative gap-5 h-screen flex flex-col justify-center items-center bg-accent"
           style={{ fontFamily: "Cardo" }}
         >
-          <CountdownComponent />
+          <h1 className="text-4xl font-medium">Wedding Gift</h1>
+          <div className="w-full flex flex-wrap gap-5 px-5">
+            <Gift
+              namerekening="Feyla Puspita"
+              norekening={21101170022}
+              bank="./assets/bca.png"
+            />
+            <Gift
+              namerekening="Farhan Thair"
+              norekening={22201170234}
+              bank="./assets/bri.png"
+            />
+          </div>
+
+          <div className="w-full px-5">
+            <div className="w-full bg-white rounded-xl relative outline-secondary outline outline-1 px-8 py-5">
+              <p className="text-3xl text-secondary">Farhan & Feyla</p>
+              <img
+                className="-mt-7 mb-3"
+                src="./assets/kado.png"
+                alt="kado"
+                width={400}
+              />
+              <p>Di</p>
+              <p>Jl. Pegangsaan timur no.52</p>
+              <p>Kec. kalideres Kab. Bogor</p>
+            </div>
+          </div>
         </div>
       </section>
     </>

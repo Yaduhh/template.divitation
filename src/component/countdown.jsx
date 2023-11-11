@@ -51,11 +51,11 @@ const CountdownComponent = ({
 
   return (
     <>
-      <div className="flex justify-center mt-10 md:mt-5 2xl:mt-10 font-Courgette">
+      <div className="flex justify-center font-Courgette">
         <div className="grid grid-flow-col gap-2 text-center auto-cols-max">
           <div>
             <div
-              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="700"
             >
@@ -73,7 +73,7 @@ const CountdownComponent = ({
           </div>
           <div>
             <div
-              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
@@ -91,7 +91,7 @@ const CountdownComponent = ({
           </div>
           <div>
             <div
-              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="1600"
             >
@@ -109,7 +109,7 @@ const CountdownComponent = ({
           </div>
           <div>
             <div
-              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="1800"
             >
