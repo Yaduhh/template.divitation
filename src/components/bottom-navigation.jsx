@@ -7,7 +7,7 @@ export default function NavigationBottom({ bgColor }) {
       <div className="fixed bottom-8 z-[9999] w-[428px] max-md:w-screen flex justify-center px-8">
         <div
           className={classNames(
-            `w-full flex justify-around rounded-md bg-[${bgColor}] py-2`
+            `w-full flex justify-around rounded-md bg-[#${bgColor}] py-2`
           )}
         >
           <a
