@@ -13,3 +13,11 @@ html{
 .animate-spin {
     animation: spin 4s linear infinite;
 }
+
+.flip-horizontal {
+    --transform-scale-x: -1;
+}
+
+.flip-vertical {
+    --transform-scale-y: -1;
+}

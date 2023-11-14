@@ -60,6 +60,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Pagination, EffectCards } from "swiper/modules";
+import DiskAudio from "./components/disk-audio";
+import FormUcapan from "./components/form/form-ucapan";
 
 function App() {
   const [openCover, setOpenCover] = useState(false);
@@ -180,7 +182,7 @@ function App() {
         <div
           id="cover"
           className={classNames(
-            `relative z-50 h-[112%] 2xl:h-screen w-screen md:w-[448px] overflow-hidden bg-white`,
+            `relative z-50 h-[112%] 2xl:h-screen w-screen max-w-3xl overflow-hidden bg-white`,
             openCover
               ? "opacity-0 -top-[1000px] transition-all duration-1000 ease-in-out"
               : "top-0 opacity-100 transition-all duration-1000 ease-in-out"
@@ -198,56 +200,26 @@ function App() {
             : "flex justify-center w-full bg-[#e9d5e9] font-Cardo"
         )}
       >
-        <div className="w-[428px] h-full relative">
+        <div className="max-w-3xl h-full relative">
           <NavigationBottom bgColor={"#393646"} />
-          <div
-            className={classNames(
-              `play-pause-wraper fixed bottom-28 w-[428px] flex justify-end pr-8 z-[999999]`
-            )}
-          >
-            <audio hidden autoPlay loop id="audio">
-              <source src={"/audio/maherzain.mp3"} type="audio/mpeg" />
-            </audio>
-            <button
-              id="play-pause-btn"
-              className={classNames(
-                `w-10 h-10 rounded-full border-2 border-base-300 flex items-center justify-center bg-[#393646] p-1 box-content `
-              )}
-              onClick={() => setplaySong((prev) => !prev)}
-            >
-              <div className="rounded-full" id="disc">
-                {playSong ? (
-                  <img alt="" src="/disc-audio.png" />
-                ) : (
-                  <div className="relative">
-                    <FaPauseCircle
-                      size={28}
-                      className="text-white z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                    />
-                    <img alt="" src="/disc-audio.png" className="" />
-                  </div>
-                )}
-              </div>
-            </button>
-          </div>
+
+          <DiskAudio
+            playSong={playSong}
+            setplaySong={setplaySong}
+            src={"/audio/maherzain.mp3"}
+          />
+
           <section id="home">
             <div className="w-full relative h-screen overflow-hidden bg-[#393646] text-[#F4EEE0] font-cardo flex flex-col 2xl:justify-center">
-              <div
-                className="w-[30%] absolute left-0 top-0"
-                data-aos="fade-right"
-                data-aos-duration="2000"
-              >
-                <img src={AccentLeft} alt="accent left" />
-              </div>
-              <div className="text-center w-full flex flex-col items-center mt-16 2xl:-mt-28">
+              <div className="text-center w-full flex flex-col items-center mt-16 xl:mt-4 2xl:mt-0">
                 <div
-                  className="text-2xl mb-3"
+                  className="text-2xl 2xl:text-4xl mb-3 font-Dancingscript"
                   data-aos="fade-up"
                   data-aos-duration="1500"
                 >
-                  SAVE THE DATE !
+                  Save The Date
                 </div>
-                <div className="w-[35%]">
+                <div className="w-[35%] xl:w-[25%]">
                   <img
                     src={Flower}
                     alt="flower"
@@ -256,13 +228,13 @@ function App() {
                   />
                 </div>
                 <div
-                  className="text-5xl mt-2 tracking-wide flex gap-3 "
+                  className="text-5xl mt-2 tracking-wide flex items-center gap-3 font-Dancingscript "
                   data-aos="fade-up"
                   data-aos-duration="2000"
                 >
-                  <div>K</div>
-                  <div>&</div>
-                  <div>D</div>
+                  <span>K</span>
+                  <span className="text-3xl">&</span>
+                  <span>D</span>
                 </div>
                 <div
                   className="w-[25%] bg-white mt-2 py-[0.5px]"
@@ -284,7 +256,7 @@ function App() {
                 >
                   <img src={FlowerBottom} alt="flower" />
                 </div>
-                <div className="flex w-full gap-5 justify-center items-center text-2xl mt-8">
+                <div className="flex w-full gap-5 justify-center items-center text-2xl xl:text-4xl mt-8 xl:mt-0 font-Dancingscript">
                   <div data-aos="fade-up" data-aos-duration="2000">
                     April
                   </div>
@@ -296,7 +268,7 @@ function App() {
                   <div
                     data-aos="fade-up"
                     data-aos-duration="2500"
-                    className="text-6xl"
+                    className="text-5xl"
                   >
                     22
                   </div>
@@ -309,20 +281,27 @@ function App() {
                     2023
                   </div>
                 </div>
-                <div
-                  className="w-[30%] absolute -bottom-32 left-0"
-                  data-aos="fade-right"
-                  data-aos-duration="2000"
-                >
-                  <img src={AccentLeftBottom} alt="flower" />
-                </div>
-                <div
-                  className="w-[25%] absolute -bottom-56 right-0"
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                >
-                  <img src={AccentRightBottom} alt="flower" />
-                </div>
+              </div>
+              <div
+                className="w-[30%] absolute left-0 top-0"
+                data-aos="fade-right"
+                data-aos-duration="2000"
+              >
+                <img src={AccentLeft} alt="accent left" />
+              </div>
+              <div
+                className="w-[30%] absolute -bottom-32 left-0"
+                data-aos="fade-right"
+                data-aos-duration="2000"
+              >
+                <img src={AccentLeftBottom} alt="flower" />
+              </div>
+              <div
+                className="w-[25%] absolute -bottom-56 right-0"
+                data-aos="fade-left"
+                data-aos-duration="2000"
+              >
+                <img src={AccentRightBottom} alt="flower" />
               </div>
             </div>
           </section>
@@ -330,38 +309,9 @@ function App() {
           {/* Section Pasangan */}
           <section id="pasangan">
             <div className="w-full relative h-screen overflow-hidden bg-[#393646] text-[#F4EEE0] font-cardo flex flex-col 2xl:justify-center">
-              <div
-                className="absolute w-[30%] right-0 top-0"
-                data-aos="fade-left"
-                data-aos-duration="2000"
-              >
-                <img src={AccentPasangan} alt="pasangan" />
-              </div>
-              <div className="absolute w-[30%] left-0 bottom-0 -scale-100">
-                <img
-                  src={AccentPasangan}
-                  alt="pasangan"
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                />
-              </div>
-              <div
-                className="absolute w-[30%] left-0 top-44 2xl:top-64 md:top-32 z-10"
-                data-aos="fade-right"
-                data-aos-duration="2000"
-              >
-                <img src={AccentLeftPasangan} alt="pasangan" />
-              </div>
-              <div
-                className="absolute w-[30%] right-0 bottom-28 md:bottom-0 2xl:bottom-52 z-10"
-                data-aos="fade-left"
-                data-aos-duration="2000"
-              >
-                <img src={AccentRightBottomPasangan} alt="pasangan" />
-              </div>
               <div className="flex p-6 items-end gap-6 mt-3 2xl:-mt-28 ">
                 <div
-                  className="w-[45%]"
+                  className="w-[45%] xl:w-[32%] xl:-mb-20 z-20"
                   data-aos="fade-right"
                   data-aos-duration="2000"
                 >
@@ -369,11 +319,11 @@ function App() {
                 </div>
                 <div className="z-[99]">
                   <div
-                    className="text-4xl mb-6"
+                    className="text-4xl xl:text-5xl mb-6"
                     data-aos="fade-up"
                     data-aos-duration="2000"
                   >
-                    <p className=" font-Dancingscript">{datas.men.fullname}</p>
+                    <p className="font-Dancingscript">{datas.men.fullname}</p>
                     <a
                       href="#instagram"
                       className="flex gap-2 items-center  text-base mt-2 text-[#f6e5bf] w-min"
@@ -383,7 +333,7 @@ function App() {
                     </a>
                   </div>
                   <div
-                    className="text-base mt-4 font-Dancingscript"
+                    className="text-base xl:text-xl mt-4 font-Dancingscript"
                     data-aos="fade-up"
                     data-aos-duration="2500"
                   >
@@ -401,7 +351,7 @@ function App() {
               </div>
               <div className="flex flex-row-reverse p-6 items-end gap-6">
                 <div
-                  className="w-[55%]"
+                  className="w-[55%] xl:w-[32%] xl:-mb-20 z-20"
                   data-aos="fade-left"
                   data-aos-duration="2000"
                 >
@@ -409,7 +359,7 @@ function App() {
                 </div>
                 <div className="text-right">
                   <div
-                    className="text-4xl mb-6 flex flex-col items-end"
+                    className="text-4xl xl:text-5xl mb-6 flex flex-col items-end"
                     data-aos="fade-up"
                     data-aos-duration="2000"
                   >
@@ -425,7 +375,7 @@ function App() {
                     </a>
                   </div>
                   <div
-                    className="text-base font-Dancingscript"
+                    className="text-base xl:text-xl font-Dancingscript"
                     data-aos="fade-up"
                     data-aos-duration="2500"
                   >
@@ -434,6 +384,35 @@ function App() {
                   </div>
                 </div>
               </div>
+              <div
+                className="absolute w-[30%] xl:w-[25%] right-0 top-0"
+                data-aos="fade-left"
+                data-aos-duration="2000"
+              >
+                <img src={AccentPasangan} alt="pasangan" />
+              </div>
+              <div className="absolute w-[30%] xl:w-[25%] left-0 bottom-0 -scale-100">
+                <img
+                  src={AccentPasangan}
+                  alt="pasangan"
+                  data-aos="fade-left"
+                  data-aos-duration="2000"
+                />
+              </div>
+              <div
+                className="absolute w-[30%] xl:w-[25%] left-0 top-44 2xl:top-64 md:top-32"
+                data-aos="fade-right"
+                data-aos-duration="2000"
+              >
+                <img src={AccentLeftPasangan} alt="pasangan" />
+              </div>
+              <div
+                className="absolute w-[30%] xl:w-[25%] right-0 bottom-28 md:bottom-0 2xl:bottom-52"
+                data-aos="fade-left"
+                data-aos-duration="2000"
+              >
+                <img src={AccentRightBottomPasangan} alt="pasangan" />
+              </div>
             </div>
           </section>
           {/* End Section Pasangan */}
@@ -441,41 +420,24 @@ function App() {
           {/* Section Event */}
           <section id="acara">
             <div className="w-full relative -z-0 h-screen overflow-hidden bg-[#393646] text-[#F4EEE0] font-cardo flex flex-col pt-28">
-              <div
-                className="w-[30%] absolute left-0 -top-4"
-                data-aos="fade-right"
-                data-aos-duration="2000"
-              >
-                <img src={AccentEvent} alt="bg" />
-              </div>
-              <div className="w-[30%] absolute right-0 -scale-x-100 -top-4">
-                <img
-                  src={AccentEvent}
-                  alt="bg"
-                  data-aos="fade-right"
-                  data-aos-duration="2000"
-                />
-              </div>
-              <div className="2xl:w-[30%] md:w-[20%] w-[30%] absolute 2xl:bottom-20 right-5 2xl:right-5 -z-10 md:right-16 bottom-20 md:bottom-10">
-                <img src={AccentMaps} alt="" />
-              </div>
-              <div className="2xl:w-[30%] md:w-[20%] w-[30%] absolute 2xl:bottom-20 bottom-20 left-5 2xl:left-5 md:left-16 -z-10 -scale-x-100 md:bottom-10">
-                <img src={AccentMaps} alt="" />
-              </div>
-              <div className="w-[40%] absolute left-12 right-0 m-auto top-10">
+              <div className="2xl:w-[25%] md:w-[20%] w-[30%]  absolute left-12 right-0 m-auto top-10">
                 <img src={Cincin} alt="" className="w-full" />
               </div>
               <div className="text-center pt-10">
                 <div className="mb-6">
-                  <h1 className="text-5xl font-Dancingscript">Akad Nikah</h1>
+                  <h1 className="text-5xl font-Dancingscript xl:mb-2">
+                    Akad Nikah
+                  </h1>
                   <p className="text-lg">Pukul 07.00 - 09.00 WIB </p>
                 </div>
                 <div>
-                  <h1 className="text-5xl font-Dancingscript">Resepsi</h1>
+                  <h1 className="text-5xl font-Dancingscript xl:mb-2">
+                    Resepsi
+                  </h1>
                   <p className="text-lg">Pukul 11.00 WIB - Selesai </p>
                 </div>
                 <div className="relative mt-24">
-                  <div className="2xl:w-[80%] md:w-[60%] w-[80%] absolute left-0 right-0 m-auto rotate-180">
+                  <div className="2xl:w-[50%] md:w-[60%] w-[80%] absolute left-0 right-0 m-auto rotate-180">
                     <img src={OutlineShape} alt="" />
                   </div>
                   <h1 className="text-4xl absolute left-0 right-0 m-auto -top-10 font-Dancingscript">
@@ -487,7 +449,7 @@ function App() {
                 </div>
               </div>
               <div className="">
-                <div className="2xl:w-[40%] md:w-[30%] w-[35%] absolute left-0 right-0 m-auto bottom-[20%] bg-[#6D5D6E] rounded-2xl p-1">
+                <div className="2xl:w-[30%] md:w-[30%] w-[35%] absolute left-0 right-0 m-auto bottom-[20%] xl:bottom-[12%] bg-[#6D5D6E] rounded-2xl xl:rounded-3xl p-1">
                   <img src={Maps} alt="" />
                   <div className="absolute left-0 right-0 m-auto  flex justify-center -bottom-4">
                     <button className="px-4 py-2 bg-[#6D5D6E] rounded-full border flex gap-2 ">
@@ -496,6 +458,35 @@ function App() {
                     </button>
                   </div>
                 </div>
+              </div>
+              <div
+                className="2xl:w-[25%] md:w-[20%] w-[30%]  absolute left-0 -top-4"
+                data-aos="fade-right"
+                data-aos-duration="2000"
+              >
+                <img src={AccentEvent} alt="bg" />
+              </div>
+              <div className="2xl:w-[25%] md:w-[20%] w-[30%]  absolute right-0 -scale-x-100 -top-4">
+                <img
+                  src={AccentEvent}
+                  alt="bg"
+                  data-aos="fade-right"
+                  data-aos-duration="2000"
+                />
+              </div>
+              <div
+                data-aos="fade-right"
+                data-aos-duration="2000"
+                className="2xl:w-[25%] md:w-[20%] w-[30%] absolute 2xl:bottom-0 right-5 2xl:right-20 -z-10 md:right-16 bottom-20 md:bottom-10  "
+              >
+                <img src={AccentMaps} alt="" />
+              </div>
+              <div
+                data-aos="fade-left"
+                data-aos-duration="2000"
+                className="2xl:w-[25%] md:w-[20%] w-[30%] absolute 2xl:bottom-0 bottom-20 left-5 2xl:left-20 md:left-16 -z-10  md:bottom-10 "
+              >
+                <img src={AccentMaps} alt="" className="-scale-x-100" />
               </div>
             </div>
           </section>
@@ -512,10 +503,34 @@ function App() {
                 Galeri Kemesraan
               </div>
               <div className="grid grid-cols-2 gap-4 px-8 mt-12">
-                <img alt="" src="/prewed-1.png" />
-                <img alt="" src="/prewed-2.png" />
-                <img alt="" src="/prewed-3.png" />
-                <img alt="" src="/prewed-4.png" />
+                <div className="flex justify-end">
+                  <img
+                    alt=""
+                    src="/prewed-1.png"
+                    className="w-full xl:w-[60%]"
+                  />
+                </div>
+                <div className="flex">
+                  <img
+                    alt=""
+                    src="/prewed-2.png"
+                    className="w-full xl:w-[60%]"
+                  />
+                </div>
+                <div className="flex justify-end">
+                  <img
+                    alt=""
+                    src="/prewed-3.png"
+                    className="w-full xl:w-[60%]"
+                  />
+                </div>
+                <div className="flex">
+                  <img
+                    alt=""
+                    src="/prewed-4.png"
+                    className="w-full xl:w-[60%]"
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -572,73 +587,19 @@ function App() {
                 data-aos="fade-up"
                 data-aos-duration="1200"
               >
-                <div className="flex bg-[#6D5D6E] rounded-full px-3 py-2 items-center gap-2 justify-center">
-                  <div className="w-[6%]">
+                <a
+                  href="#https://calendar.google.com/calendar/u/0/r/eventedit?text=[Resepsi]+Kelvin+%26+Dilla&dates=20211010T130000+07:00/20211010T150000+07:00&details=Alam%20Sutera%20Bintaro%20blok%20G645%20Tangerang%20Selatan&location=&sprop&sprop=name"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex bg-[#6D5D6E] rounded-full px-3 py-2 items-center gap-2 justify-center"
+                >
+                  <div className="w-[6%] xl:w-[3%]">
                     <img src={Ikalendar} alt="kalendar" />
                   </div>
-                  <a
-                    target="_blank"
-                    href={
-                      "#https://calendar.google.com/calendar/u/0/r/eventedit?text=[Resepsi]+Kelvin+%26+Dilla&dates=20211010T130000+07:00/20211010T150000+07:00&details=Alam%20Sutera%20Bintaro%20blok%20G645%20Tangerang%20Selatan&location=&sprop&sprop=name"
-                    }
-                    rel="noreferrer"
-                  >
-                    Tambah ke kalender
-                  </a>
-                </div>
+                  Tambah ke kalender
+                </a>
               </div>
-              <form
-                className="text-center mt-10 2xl:mt-20 md:mt-5 z-10"
-                onSubmit={(e) => {
-                  // submitGreeting(e, ucapan, setUcapan);
-                }}
-              >
-                <div
-                  className="text-2xl 2xl:text-3xl"
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                >
-                  Ucapan & Doa
-                </div>
-                <div
-                  className="2xl:text-lg"
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                >
-                  Untuk pasangan yang berbahagia
-                </div>
-                <div
-                  className="text-center mt-3"
-                  data-aos="fade-up"
-                  data-aos-duration="2500"
-                >
-                  <input
-                    type="text"
-                    name="user"
-                    placeholder="Nama anda"
-                    className="input input-bordered px-2 py-1 rounded-lg border-[#1A120B] input-sm w-[80%] max-w-xs text-[#1B1A17]"
-                  />
-                  <textarea
-                    name="text"
-                    placeholder="Ucapan untuk mempelai"
-                    className="textarea text-[#1B1A17] px-2 py-1 rounded-lg textarea-bordered border-[#1A120B] textarea-md w-[80%] max-w-xs mt-4"
-                  ></textarea>
-                </div>
-                <div
-                  className="text-end px-9 mt-3 md:px-14 w-full"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                >
-                  <button
-                    className={
-                      "bg-[#393646] rounded-full px-5 py-1 font-bold text-[#E5E6E3]"
-                    }
-                    type="submit"
-                  >
-                    Kirim
-                  </button>
-                </div>
-              </form>
+              <FormUcapan />
               <div
                 className="absolute w-[90%] right-0 bottom-0 -z-10"
                 data-aos="fade-up"
