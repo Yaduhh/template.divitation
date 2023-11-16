@@ -265,7 +265,7 @@ function App() {
                 width={60}
                 data-aos="fade-up"
                 data-aos-duration="700"
-                className="-mt-16"
+                className="-mt-16 md:mt-0"
               />
               <p
                 className="text-4xl text-center mx-5"
@@ -874,7 +874,7 @@ function App() {
                   data-aos-duration="2600"
                 />
               </div>
-              <div className="w-full px-6 md:px-28">
+              <div className="w-full md:w-[80%] px-6 md:px-28">
                 <img
                   src="./assets/closing.png"
                   alt="closing"
