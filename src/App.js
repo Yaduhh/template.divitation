@@ -204,7 +204,7 @@ function App() {
                 Assalamualaikum <br /> Waarohmatullahi Wabarokaatuh
               </p>
               <div
-                className="text-center px-7 relative"
+                className="text-center px-7 md:px-16 relative"
                 data-aos="fade-up"
                 data-aos-duration="2700"
               >
@@ -884,7 +884,7 @@ function App() {
               </div>
               <div
                 style={{ fontFamily: "Cardo" }}
-                className="bg-white/30 backdrop-blur-sm mt-5 px-5 py-5 mx-6 rounded-xl"
+                className="bg-white/50 backdrop-blur-sm mt-5 px-5 py-5 mx-6 rounded-xl"
                 data-aos="fade-up"
                 data-aos-duration="3000"
               >
