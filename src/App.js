@@ -749,31 +749,38 @@ function App() {
                 Ucapan <br />
                 ke Pengantin
               </p>
-              <form className="w-full px-5 flex flex-col gap-5 items-end" />
-              <input
-                className="w-full py-2 px-5 rounded-xl bg-white focus:outline-1 outline-secondary"
-                placeholder="Nama Pengirim"
-                id="name"
-                type="text"
-                data-aos="fade-up"
-                data-aos-duration="1700"
-              />
-              <textarea
-                className="w-full py-2 px-5 pb-10 rounded-xl bg-white focus:outline-1 outline-secondary"
-                placeholder="Kalimat ucapan untuk mempelai"
-                id="message"
-                data-aos="fade-up"
-                data-aos-duration="1900"
-              />
-              <div>
-                <button
-                  className="px-10 py-2 rounded-xl bg-secondary text-white"
+              <form
+                className="w-full px-5 flex flex-col gap-5 items-end"
+                onSubmit={(e) => {
+                  submitGreeting(e);
+                }}
+              >
+                <input
+                  className="w-full py-2 px-5 rounded-xl bg-white focus:outline-1 outline-secondary"
+                  placeholder="Nama Pengirim"
+                  name="user"
+                  type="text"
                   data-aos="fade-up"
-                  data-aos-duration="2100"
-                >
-                  Kirim
-                </button>
-              </div>
+                  data-aos-duration="1700"
+                />
+                <textarea
+                  className="w-full py-2 px-5 pb-10 rounded-xl bg-white focus:outline-1 outline-secondary"
+                  placeholder="Kalimat ucapan untuk mempelai"
+                  name="text"
+                  data-aos="fade-up"
+                  data-aos-duration="1900"
+                />
+                <div>
+                  <button
+                    className="px-10 py-2 rounded-xl bg-secondary text-white"
+                    data-aos="fade-up"
+                    data-aos-duration="2100"
+                    type="submit"
+                  >
+                    Kirim
+                  </button>
+                </div>
+              </form>
             </div>
           </section>
 
