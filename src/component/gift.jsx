@@ -2,6 +2,23 @@ import React from "react";
 import { PiCopyFill } from "react-icons/pi";
 
 const Gift = ({ bank, namerekening, norekening }) => {
+  function copyToClipboard(norek) {
+    const nomorRekeningElement = document.getElementById(norek);
+
+    if (nomorRekeningElement) {
+      const textToCopy = nomorRekeningElement.textContent;
+      const textArea = document.createElement("textarea");
+      textArea.value = textToCopy;
+
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+
+      // Optional: Tampilkan pesan atau perubahan warna tombol setelah menyalin
+      alert("Nomor rekening berhasil disalin!");
+    }
+  }
   return (
     <>
       <div
@@ -22,16 +39,21 @@ const Gift = ({ bank, namerekening, norekening }) => {
             {namerekening}
           </p>
           <div className="w-full bg-secondary h-[0.5px]"></div>
-          <p className="text-lg text-secondary">{norekening}</p>
+          <p className="text-lg text-secondary" id="bca">
+            {norekening}
+          </p>
         </div>
-        <div
+        <button
           className="flex items-center space-x-1 text-primary place-content-end"
           data-aos="fade-up"
           data-aos-duration="2500"
+          onClick={() => {
+            copyToClipboard("bca");
+          }}
         >
           <div>Salin</div>
           <PiCopyFill size={30} />
-        </div>
+        </button>
       </div>
     </>
   );

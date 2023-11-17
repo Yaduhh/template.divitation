@@ -57,6 +57,24 @@ function App() {
     handleAudio();
   }
 
+  function submitGreeting(e) {
+    e.preventDefault();
+
+    const name = e.target.user.value;
+    const message = e.target.text.value;
+
+    // Membuat pesan yang akan dikirimkan melalui URL WhatsApp
+    const greetingMessage = `Halo Liza 👋 aku ${name} mau ngucapin, ${message}`;
+
+    // Membentuk URL WhatsApp
+    const whatsappURL = `https://wa.me/6285540172747?text=${encodeURIComponent(
+      greetingMessage
+    )}`;
+
+    // Mengarahkan pengguna ke URL WhatsApp
+    window.location.href = whatsappURL;
+  }
+
   const queryParameters = new URLSearchParams(window.location.search);
   const kepada = queryParameters.get("to");
   return (
@@ -83,6 +101,7 @@ function App() {
         </div>
       </div>
       {/* end Cover */}
+
       {/* undangan */}
       <div
         className={classNames(
@@ -677,7 +696,7 @@ function App() {
               style={{ fontFamily: "Cardo" }}
             >
               <img
-                className="absolute top-36 right-12"
+                className="absolute top-36 right-12 -z-10"
                 src="./assets/accent.png"
                 alt="accent"
                 width={40}
@@ -685,7 +704,7 @@ function App() {
                 data-aos-duration="2500"
               />
               <img
-                className="absolute bottom-36 left-12"
+                className="absolute bottom-36 left-12 -z-10"
                 src="./assets/accent.png"
                 alt="accent"
                 width={40}
@@ -730,35 +749,37 @@ function App() {
                 Ucapan <br />
                 ke Pengantin
               </p>
-              <div className="w-full px-5 flex flex-col gap-5 items-end">
-                <input
-                  className="w-full py-2 px-5 rounded-xl bg-white focus:outline-1 outline-secondary"
-                  placeholder="Nama Pengirim"
+              <form className="w-full px-5 flex flex-col gap-5 items-end" />
+              <input
+                className="w-full py-2 px-5 rounded-xl bg-white focus:outline-1 outline-secondary"
+                placeholder="Nama Pengirim"
+                id="name"
+                type="text"
+                data-aos="fade-up"
+                data-aos-duration="1700"
+              />
+              <textarea
+                className="w-full py-2 px-5 pb-10 rounded-xl bg-white focus:outline-1 outline-secondary"
+                placeholder="Kalimat ucapan untuk mempelai"
+                id="message"
+                data-aos="fade-up"
+                data-aos-duration="1900"
+              />
+              <div>
+                <button
+                  className="px-10 py-2 rounded-xl bg-secondary text-white"
                   data-aos="fade-up"
-                  data-aos-duration="1700"
-                />
-                <textarea
-                  className="w-full py-2 px-5 pb-10 rounded-xl bg-white focus:outline-1 outline-secondary"
-                  placeholder="Kalimat ucapan untuk mempelai"
-                  data-aos="fade-up"
-                  data-aos-duration="1900"
-                />
-                <div>
-                  <button
-                    className="px-10 py-2 rounded-xl bg-secondary text-white"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    Kirim
-                  </button>
-                </div>
+                  data-aos-duration="2100"
+                >
+                  Kirim
+                </button>
               </div>
             </div>
           </section>
 
           <section id="gift">
             <div
-              className="w-full overflow-hidden relative z-0 gap-5 h-screen flex flex-col justify-center items-center bg-accent"
+              className="w-full overflow-hidden relative z-0 gap-5 h-auto flex flex-col justify-center items-center bg-accent py-7"
               style={{ fontFamily: "Cardo" }}
             >
               <img
@@ -786,7 +807,7 @@ function App() {
                 />
               </div>
               <h1
-                className="text-4xl font-medium -mt-10"
+                className="text-4xl font-medium mt-5"
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
@@ -794,14 +815,9 @@ function App() {
               </h1>
               <div className="w-full flex flex-wrap gap-5 px-5">
                 <Gift
-                  namerekening="Feyla Puspita"
-                  norekening={21101170022}
+                  namerekening="Siti Nur Choliza"
+                  norekening={2381367756}
                   bank="./assets/bca.png"
-                />
-                <Gift
-                  namerekening="Farhan Thair"
-                  norekening={22201170234}
-                  bank="./assets/bri.png"
                 />
               </div>
 
@@ -818,9 +834,11 @@ function App() {
                     alt="kado"
                     width={400}
                   />
-                  <p>Di</p>
-                  <p>Jl. Pegangsaan timur no.52</p>
-                  <p>Kec. kalideres Kab. Bogor</p>
+                  <p>Di Kediaman Mempelai Wanita</p>
+                  <p className="text-sm">
+                    Plutungan, Pakisputih, Kec. Kedungwuni <br />
+                    Kabupaten Pekalongan, Jawa Tengah
+                  </p>
                 </div>
               </div>
             </div>
