@@ -130,18 +130,14 @@ function App() {
                 data-aos-duration="2000"
                 className="mt-5"
               />
-              <div className="text-center text-3xl">
-                <p
-                  style={{ fontFamily: "Cardo" }}
-                  data-aos="fade-up"
-                  data-aos-duration="2100"
-                >
+              <div className="text-center text-3xl font-Cardo">
+                <p data-aos="fade-up" data-aos-duration="2100">
                   Save The Date <br /> The Wedding Of
                 </p>
               </div>
               <img src="./assets/hero.png" alt="hero" width={150} />
               <p
-                className="text-4xl text-center"
+                className="text-4xl text-center font-Cardo"
                 style={{ fontFamily: "Cardo" }}
                 data-aos="fade-up"
                 data-aos-duration="2500"
@@ -150,7 +146,7 @@ function App() {
                 Liza
               </p>
               <p
-                className="text-3xl mb-8 pb-36 font-medium"
+                className="text-3xl mb-8 pb-36 font-medium font-Cardo"
                 style={{ fontFamily: "Cardo" }}
                 data-aos="fade-up"
                 data-aos-duration="3000"
@@ -216,7 +212,7 @@ function App() {
                 />
               </div>
               <p
-                className="text-center"
+                className="text-center font-Cardo"
                 data-aos="fade-up"
                 data-aos-duration="2500"
               >
@@ -287,7 +283,7 @@ function App() {
                 className="-mt-16 md:mt-0"
               />
               <p
-                className="text-4xl text-center mx-5"
+                className="text-4xl text-center mx-5 font-Cardo"
                 style={{ fontFamily: "Cardo-bold" }}
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -295,7 +291,7 @@ function App() {
                 Gega Kaniaratri Nugroho S.Par
               </p>
               <a
-                className="flex items-center text-xl gap-1"
+                className="flex items-center text-xl gap-1 font-Cardo"
                 data-aos="fade-up"
                 data-aos-duration="1500"
                 href="https://www.instagram.com/gegamuhammad/"
@@ -312,7 +308,7 @@ function App() {
                   Putra Pertama/Kedua dari keluarga
                 </p>
                 <p
-                  style={{ fontFamily: "Cardo" }}
+                  className="font-Cardo"
                   data-aos="fade-up"
                   data-aos-duration="1900"
                 >
@@ -371,7 +367,7 @@ function App() {
                 className="-mt-10"
               />
               <p
-                className="text-4xl text-center mx-8"
+                className="text-4xl text-center mx-8 font-Cardo"
                 style={{ fontFamily: "Cardo-bold" }}
                 data-aos="fade-up"
                 data-aos-duration="700"
@@ -396,7 +392,7 @@ function App() {
                   Putri Pertama/Kedua dari keluarga
                 </p>
                 <p
-                  style={{ fontFamily: "Cardo" }}
+                  className="font-Cardo"
                   data-aos="fade-up"
                   data-aos-duration="1200"
                 >
@@ -453,7 +449,7 @@ function App() {
               <div className="w-full flex items-start justify-start -mt-24 md:mt-0">
                 <div className="text-center mx-5 md:mx-20 mt-10 md:mt-10">
                   <p
-                    className="text-4xl"
+                    className="text-4xl font-Cardo"
                     style={{ fontFamily: "Cardo-bold" }}
                     data-aos="fade-up"
                     data-aos-duration="300"
@@ -461,7 +457,7 @@ function App() {
                     Akad
                   </p>
                   <p
-                    style={{ fontFamily: "Cardo" }}
+                    className="font-Cardo"
                     data-aos="fade-up"
                     data-aos-duration="500"
                   >
@@ -479,7 +475,7 @@ function App() {
               <div className="w-full flex items-end justify-end">
                 <div className="text-center mx-5 md:mx-20 md:mb-10">
                   <p
-                    className="text-4xl"
+                    className="text-4xl font-Cardo font-bold"
                     style={{ fontFamily: "Cardo-bold" }}
                     data-aos="fade-up"
                     data-aos-duration="700"
@@ -498,7 +494,7 @@ function App() {
 
               <div className="text-center mb-8 -z-0 relative w-full flex flex-col items-center mt-5">
                 <p
-                  className="text-4xl bg-accent italic"
+                  className="text-4xl bg-accent italic font-Cardo font-bold"
                   style={{ fontFamily: "Cardo-bold" }}
                   data-aos="fade-up"
                   data-aos-duration="900"
@@ -523,7 +519,7 @@ function App() {
               </div>
 
               <div
-                className="text-center mb-3 md:mt-5 mt-3"
+                className="text-center mb-3 md:mt-5 mt-3 font-Cardo"
                 style={{ fontFamily: "Cardo" }}
               >
                 <p
@@ -570,7 +566,7 @@ function App() {
                   />
                 </div>
                 <a
-                  className="absolute bottom-3 bg-secondary px-5 gap-2 py-1 rounded-2xl text-white flex items-center"
+                  className="absolute bottom-3 bg-secondary px-5 gap-2 py-1 rounded-2xl text-white flex items-center font-Cardo"
                   href="https://maps.app.goo.gl/yT7PQMZqgaJE56zKA?g_st=ic"
                   data-aos="fade-up"
                   data-aos-duration="2000"
@@ -623,7 +619,7 @@ function App() {
                   />
                 </div>
                 <h1
-                  className="text-4xl font-medium text-center mx-20 mt-5"
+                  className="text-4xl font-medium text-center mx-20 mt-5 font-Cardo"
                   data-aos="fade-up"
                   data-aos-duration="600"
                 >
@@ -831,7 +827,7 @@ function App() {
                 data-aos-duration="3000"
               >
                 <div className="w-full bg-white rounded-xl relative outline-secondary outline outline-1 px-8 py-5">
-                  <p className="text-3xl text-secondary">Farhan & Feyla</p>
+                  <p className="text-3xl text-secondary">Gega & Liza</p>
                   <img
                     className="-mt-7 mb-3"
                     src="./assets/kado.png"
@@ -910,7 +906,7 @@ function App() {
                 data-aos="fade-up"
                 data-aos-duration="3000"
               >
-                <p className=" text-center">
+                <p className=" text-center font-Cardo">
                   Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
                   Bapak/Ibu/Saudara/i berkenan hadir dan memberikan restu. Atas
                   kehadiran dan doa restunya, kami mengucapkan terimakasih
