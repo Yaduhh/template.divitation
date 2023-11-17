@@ -10,6 +10,15 @@ module.exports = {
       third: "#C27F5C",
       white: "#FFFFFF",
     },
+
+    fontFamily: {
+      "DM-Serif-display": ['"DM Serif Display"', "serif"],
+      "Ribeye-marrow": ['"Ribeye Marrow"', "cursive"],
+      Cardo: ['"Cardo"', "serif"],
+      Corinthia: ['"Corinthia"', "cursive"],
+      Parisienne: ['"Parisienne"', "cursive"],
+      Courgette: ['"Courgette"', "cursive"],
+    },
   },
   plugins: [],
 };

@@ -305,8 +305,7 @@ function App() {
               </a>
               <div className="text-center">
                 <p
-                  className="text-2xl"
-                  style={{ fontFamily: "Cardo" }}
+                  className="text-4xl font-Corinthia"
                   data-aos="fade-up"
                   data-aos-duration="1700"
                 >
@@ -390,8 +389,7 @@ function App() {
               </a>
               <div className="text-center">
                 <p
-                  className="text-2xl"
-                  style={{ fontFamily: "Cardo" }}
+                  className="text-4xl font-Corinthia"
                   data-aos="fade-up"
                   data-aos-duration="1100"
                 >
@@ -508,8 +506,7 @@ function App() {
                   Jum'at
                 </p>
                 <p
-                  className="text-secondary text-4xl"
-                  style={{ fontFamily: "Cardo-bold" }}
+                  className="text-secondary text-4xl font-Ribeye-marrow"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
@@ -721,14 +718,14 @@ function App() {
               </div>
               <div className="text-center">
                 <p
-                  className="text-xl"
+                  className="text-xl font-Cardo"
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
                   Terhitung mundur dari sekarang
                 </p>
                 <p
-                  className="text-4xl font-medium"
+                  className="text-4xl font-medium font-Courgette"
                   data-aos="fade-up"
                   data-aos-duration="1200"
                 >
@@ -742,7 +739,7 @@ function App() {
                 targetMinute={20}
               />
               <p
-                className="text-4xl font-medium text-center"
+                className="text-4xl font-medium text-center font-Courgette"
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
@@ -814,7 +811,7 @@ function App() {
                 />
               </div>
               <h1
-                className="text-4xl font-medium mt-5"
+                className="text-4xl font-medium mt-5 font-Ribeye-marrow"
                 data-aos="fade-up"
                 data-aos-duration="1600"
               >
