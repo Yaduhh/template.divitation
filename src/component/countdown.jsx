@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const CountdownComponent = ({
+  targetYear,
   targetMonth,
   targetDate,
   targetHour,
@@ -14,11 +15,13 @@ const CountdownComponent = ({
   });
 
   useEffect(() => {
+    let interval;
+
     const calculateCountdown = () => {
       const now = new Date();
       const target = new Date(
-        now.getFullYear(),
-        targetMonth - 1,
+        targetYear,
+        targetMonth,
         targetDate,
         targetHour,
         targetMinute,
@@ -44,18 +47,17 @@ const CountdownComponent = ({
 
     calculateCountdown(); // Hitung hitungan mundur saat komponen pertama kali dimuat
 
-    const interval = setInterval(calculateCountdown, 1000);
+    interval = setInterval(calculateCountdown, 1000);
 
     return () => clearInterval(interval);
-  }, [targetMonth, targetDate, targetHour, targetMinute]);
-
+  }, [targetYear, targetMonth, targetDate, targetHour, targetMinute]);
   return (
     <>
-      <div className="flex justify-center font-Courgette">
-        <div className="grid grid-flow-col gap-2 md:gap-6 text-center auto-cols-max">
+      <div className="flex justify-center mt-10 md:mt-5 2xl:mt-10 font-Courgette">
+        <div className="grid grid-flow-col gap-2 text-center auto-cols-max">
           <div>
             <div
-              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="700"
             >
@@ -73,7 +75,7 @@ const CountdownComponent = ({
           </div>
           <div>
             <div
-              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
@@ -91,7 +93,7 @@ const CountdownComponent = ({
           </div>
           <div>
             <div
-              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="1600"
             >
@@ -109,7 +111,7 @@ const CountdownComponent = ({
           </div>
           <div>
             <div
-              className="p-6 rounded-2xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
+              className="p-6 rounded-xl shadow-neutral-400 shadow-inner flex flex-col bg-[#F3EAD3] rounded-box text-[#1A120B] text-sm"
               data-aos="fade-up"
               data-aos-duration="1800"
             >

@@ -9,14 +9,28 @@ import Navigation from "./component/bottom-navigation";
 import classNames from "classnames";
 import CoverScreen from "./screens/cover";
 import DiskAudio from "./component/disk-audio";
+import { FaPauseCircle } from "react-icons/fa";
 
 function App() {
   const [openCover, setOpenCover] = useState(false);
   const [end, setEnd] = useState(false);
-  const [playSong, setplaySong] = useState(true);
+  const [playSong, setplaySong] = useState(false);
+ 
+  function handleAudio() {
+    const audio = document.getElementById("audio");
+    const disc = document.getElementById("disc");
+    // audio.play();
+    if (playSong) {
+      audio.play();
+      disc.classList.add("animate-spin");
+    } else {
+      audio.pause();
+      disc.classList.remove("animate-spin");
+    }
+  }
 
-  useEffect(() => {
-    Aos.init({
+  useEffect(()=>{
+     Aos.init({
       disable: false,
       startEvent: "DOMContentLoaded",
       initClassName: "aos-init",
@@ -32,28 +46,17 @@ function App() {
       mirror: true,
       anchorPlacement: "top-bottom",
     });
+  })
+
+  useEffect(() => {
     handleAudio();
   }, [playSong]);
 
-  function handleAudio() {
-    const audio = document.getElementById("audio");
-    const disc = document.getElementById("disc");
-    if (playSong) {
-      audio
-        .play()
-        .then(() => setplaySong(true))
-        .catch(() => setplaySong(false));
 
-      disc.classList.add("animate-spin");
-    } else {
-      disc.classList.remove("animate-spin");
-      audio.pause();
-      setplaySong(false);
-    }
-  }
 
   function handleCover() {
     setOpenCover(true);
+    setplaySong(true)
     handleAudio();
   }
 
@@ -305,15 +308,14 @@ function App() {
                   data-aos="fade-up"
                   data-aos-duration="1700"
                 >
-                  Putra Pertama/Kedua dari keluarga
+                  Putra Pertama dari keluarga
                 </p>
                 <p
                   className="font-Cardo"
                   data-aos="fade-up"
                   data-aos-duration="1900"
                 >
-                  Bpk. H.Kurniawan A.Md.Kom & <br /> Ibu Hj.Titi Tri Nurhaju
-                  A.Md.Par
+                  Bpk. Kurniawan & Ibu Titi Tri Nurhaju
                 </p>
               </div>
               <img
@@ -389,7 +391,7 @@ function App() {
                   data-aos="fade-up"
                   data-aos-duration="1100"
                 >
-                  Putri Pertama/Kedua dari keluarga
+                  Putri Kedua dari keluarga
                 </p>
                 <p
                   className="font-Cardo"
@@ -566,6 +568,7 @@ function App() {
                   />
                 </div>
                 <a
+                  target="_blank" rel="noopener noreferrer"
                   className="absolute bottom-3 bg-secondary px-5 gap-2 py-1 rounded-2xl text-white flex items-center font-Cardo"
                   href="https://maps.app.goo.gl/yT7PQMZqgaJE56zKA?g_st=ic"
                   data-aos="fade-up"
@@ -729,10 +732,11 @@ function App() {
                 </p>
               </div>
               <CountdownComponent
-                targetMonth={12}
-                targetDate={22}
-                targetHour={30}
-                targetMinute={20}
+              targetYear={2024}
+                targetMonth={1}
+                targetDate={6}
+                targetHour={7}
+                targetMinute={0}
               />
               <p
                 className="text-4xl font-medium text-center font-Courgette"
@@ -744,6 +748,7 @@ function App() {
               </p>
               <form
                 className="w-full px-5 flex flex-col gap-5 items-end"
+                target="_blank" 
                 onSubmit={(e) => {
                   submitGreeting(e);
                 }}

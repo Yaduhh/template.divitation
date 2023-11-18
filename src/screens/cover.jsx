@@ -16,12 +16,6 @@ export default function CoverScreen({ kepada, onClick }) {
         <div className="w-full hidden flex-col justify-center items-center absolute -z-10 md:flex lg:flex xl:flex">
           <img src="./assets/covermd.png" alt="cover" />
         </div>
-        <button
-          onClick={onClick}
-          className="bg-third/70 text-white font-medium backdrop-blur-sm px-6 py-3 rounded-xl text-xl absolute bottom-[10%] font-Cardo"
-        >
-          Buka Undangan
-        </button>
         <div className="absolute bg-white/60 backdrop-blur-sm rounded-xl bottom-40 md:top-auto xl:top-20 2xl:top-auto md:bottom-[20%] xl:bottom-[75%] 2xl:bottom-[20%] px-28 py-3 border-primary text-center border z-10">
           <p className="font-Cardo text-secondary">Kepada Sdr</p>
           <p className="text-2xl font-bold font-Cardo">{kepada}</p>

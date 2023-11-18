@@ -17,7 +17,7 @@ export default function DiskAudio({ playSong, setplaySong, src, className }) {
             `w-10 h-10 rounded-full border-2 border-base-300 flex items-center justify-center  p-1 box-content`,
             className
           )}
-          onClick={() => setplaySong((prev) => !prev)}
+          onClick={() => setplaySong(!playSong)}
         >
           <div className="rounded-full" id="disc">
             {playSong ? (
