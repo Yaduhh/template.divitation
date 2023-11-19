@@ -9,7 +9,6 @@ import Navigation from "./component/bottom-navigation";
 import classNames from "classnames";
 import CoverScreen from "./screens/cover";
 import DiskAudio from "./component/disk-audio";
-import { FaPauseCircle } from "react-icons/fa";
 
 function App() {
   const [openCover, setOpenCover] = useState(false);
@@ -114,7 +113,7 @@ function App() {
         <div className="w-full max-w-3xl h-full relative shadow-2xl">
           <DiskAudio
             className="bg-[#850E35]"
-            src={"audio/sofia.mp3"}
+            src={"audio/Sofia.mp3"}
             playSong={playSong}
             setplaySong={setplaySong}
           />
