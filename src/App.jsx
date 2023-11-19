@@ -289,7 +289,7 @@ function App() {
                 data-aos="fade-up"
                 data-aos-duration="1000"
               >
-                Gega Kaniaratri Nugroho S.Par
+                Gega Kaniaratri Nugroho
               </p>
               <a
                 className="flex items-center text-xl gap-1 font-Cardo"
