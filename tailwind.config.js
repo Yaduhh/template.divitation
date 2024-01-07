@@ -15,9 +15,7 @@ module.exports = {
       "DM-Serif-display": ['"DM Serif Display"', "serif"],
       "Ribeye-marrow": ['"Ribeye Marrow"', "cursive"],
       Cardo: ['"Cardo"', "serif"],
-      Corinthia: ['"Corinthia"', "cursive"],
-      Parisienne: ['"Parisienne"', "cursive"],
-      Courgette: ['"Courgette"', "cursive"],
+      Poppins: [ 'Poppins', 'sans-serif']
     },
   },
   plugins: [],
