@@ -404,7 +404,7 @@ function App() {
                       data-aos="fade-up"
                       data-aos-duration="1200"
                     >
-                      Elly Setiani S.M.
+                      Elly Setiani S.M
                     </p>
                     <p
                       className="font-Poppins text-sm my-8"
