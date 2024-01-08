@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 @keyframes spin {
+<<<<<<< HEAD
     to {
         transform: rotate(360deg);
     }
 }
 
 html {
+=======
+    to { transform: rotate(360deg); }
+}
+
+html{
+>>>>>>> be806a352e7fa2ee65b68e823706c36f336b0282
     scroll-behavior: smooth;
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 
+<<<<<<< HEAD
 export default function CoverScreen({ kepada, onClick }) {
   return (
     <div className="w-full h-screen flex justify-center items-center overflow-hidden">
@@ -33,6 +34,13 @@ export default function CoverScreen({ kepada, onClick }) {
             />
           </button>
         </div>
+=======
+export default function CoverScreen({ onClick }) {
+  return (
+    <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-[428px] h-screen flex flex-col items-center justify-evenly overflow-auto">
+        <button onClick={onClick}>Open</button>
+>>>>>>> be806a352e7fa2ee65b68e823706c36f336b0282
       </div>
     </div>
   );
