@@ -58,25 +58,25 @@ const CountdownComponent = ({
         data-aos="fade-up"
         data-aos-duration="1500"
       >
-        <p className="text-3xl font-medium">Save The Date</p>
+        <p className="text-3xl font-medium">Simpan di Kalender</p>
         <p className="text-sm md:text-base my-4 md:my-2">
           Hitung mundur ke hari H
         </p>
-        <div className="bg-[#0E1A0A] bg-opacity-50 rounded-2xl w-full flex justify-center gap-5">
-          <div className="flex flex-col items-center my-3">
-            <p className="text-3xl font-semibold">{countdownValue.days}</p>
+        <div className="bg-[#0E1A0A] bg-opacity-50 py-6 rounded-2xl w-full flex justify-center gap-5">
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-semibold">{countdownValue.days}</p>
             <p className="text-sm">Hari</p>
           </div>
-          <div className="flex flex-col items-center my-3">
-            <p className="text-3xl font-semibold">{countdownValue.hours}</p>
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-semibold">{countdownValue.hours}</p>
             <p className="text-sm">Jam</p>
           </div>
-          <div className="flex flex-col items-center my-3">
-            <p className="text-3xl font-semibold">{countdownValue.minutes}</p>
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-semibold">{countdownValue.minutes}</p>
             <p className="text-sm">Menit</p>
           </div>
-          <div className="flex flex-col items-center my-3">
-            <p className="text-3xl font-semibold">{countdownValue.seconds}</p>
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-semibold">{countdownValue.seconds}</p>
             <p className="text-sm">Detik</p>
           </div>
         </div>

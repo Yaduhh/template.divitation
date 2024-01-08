@@ -294,7 +294,7 @@ function App() {
             <div className="w-full overflow-hidden relative -z-0 gap-5 h-screen flex flex-col justify-evenly items-start">
               <div className="text-base font-Poppins text-white px-8 w-full pb-[20%]">
                 <p data-aos="fade-up" data-aos-duration="2100">
-                  Happy Wedding
+                  Menikahkan anak kami
                 </p>
                 <p
                   className="text-3xl md:text-5xl font-Cardo my-2"
@@ -359,7 +359,7 @@ function App() {
                       data-aos="fade-up"
                       data-aos-duration="1300"
                     >
-                      Putra pertama dari
+                      Putra pertama kami
                     </p>
                     <p
                       className="font-Poppins"
@@ -404,7 +404,7 @@ function App() {
                       data-aos="fade-up"
                       data-aos-duration="1200"
                     >
-                      Elly Setiani S.M.
+                      Elly Setiani S.M
                     </p>
                     <p
                       className="font-Poppins text-sm my-8"
@@ -444,7 +444,7 @@ function App() {
                   data-aos="fade-up"
                   data-aos-duration="700"
                 >
-                  Our Story
+                  Cerita Pasangan
                 </p>
                 <p
                   className="text-sm my-4 font-Poppins"
@@ -494,9 +494,9 @@ function App() {
                         AWAL BERTEMU
                       </p>
                       <p className="text-xm">
-                        Kami dipertemukan lantaran film “Filosofi Kopi 2: Ben &
-                        Jody” yang saat itu sedang mendapat animo yang besar di
-                        masyarakat.
+                        Anak kami dipertemukan lantaran film “Filosofi Kopi 2:
+                        Ben & Jody” yang saat itu sedang mendapat animo yang
+                        besar di masyarakat.
                       </p>
                     </div>
                     <div className="">
@@ -505,8 +505,8 @@ function App() {
                         MENJALIN HUBUNGAN
                       </p>
                       <p className="text-xm">
-                        Karena merasa cocok satu sama lain, maka kami memutuskan
-                        untuk mengenal lebih dekat.
+                        Karena merasa cocok satu sama lain, maka anak kami
+                        memutuskan untuk mengenal lebih dekat.
                       </p>
                     </div>
                     <div className="">
@@ -516,8 +516,8 @@ function App() {
                       </p>
                       <p className="text-xm">
                         Setelah kurang lebih satu tahun saling mengenal,
-                        kemudian kami melangkah ke jenjang yang lebih serius
-                        dengan mempertemukan kedua keluarga kami.
+                        kemudian anak kami melangkah ke jenjang yang lebih
+                        serius dengan mempertemukan kedua keluarga.
                       </p>
                     </div>
                     <div className="">
@@ -528,7 +528,7 @@ function App() {
                       <p className="text-xm">
                         Untuk menjalani babak baru di kehidupan, sebagaimana
                         dipertemukannya Nabi Muhammad dengan Siti Khadijah.
-                        InsyaAllah kami akan melaksanakan pernikahan .
+                        InsyaAllah anak kami akan melaksanakan pernikahan .
                       </p>
                     </div>
                   </div>
@@ -537,80 +537,54 @@ function App() {
             </div>
           </section>
           <section id="acara">
-            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 h-screen flex flex-col justify-start items-start ">
-              <div className="w-full px-8 pt-8 flex flex-col gap-5">
-                <div
-                  className="p-5 rounded-2xl bg-[#0E1A0A] bg-opacity-50 text-white font-Poppins"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                >
-                  <p className="text-3xl font-medium tracking-wider mb-2">
-                    AKAD NIKAH
+            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 h-screen flex flex-col justify-center items-start ">
+              <div className="w-full px-8 pt-8 flex flex-col gap-10">
+                <div>
+                  <p className="text-3xl font-medium  mb-4 text-white font-Poppins text-center ">
+                    Kami mengundang anda
                   </p>
-                  <p className="text-sm md:text-base">
-                    Selasa, 23 Januari 2024
+                  <p className="text-sm md:text-base mb-4 text-white font-Poppins text-center tracking-wider">
+                    Pada acara
                   </p>
-                  <p className="text-sm md:text-base my-2">08:00 WIB</p>
-                  <p className="text-sm md:text-base">
-                    Dk. Jebogo II RT.09 / RW.03
-                    <br />
-                    Sumurjomblangbogo Bojong
-                    <br /> Kab. Pekalongan
-                  </p>
-                  <a
-                    target="_blank"
-                    href="https://www.google.com/maps?q=-6.985318660736084,109.58277893066406&z=17&hl=id"
-                    className="border border-white rounded-full pl-3 pr-3 flex items-center w-fit gap-2 mt-4 py-1"
-                    rel="noreferrer"
+                  <div
+                    className="p-5 rounded-2xl bg-[#0E1A0A] bg-opacity-50 text-white font-Poppins"
+                    data-aos="fade-up"
+                    data-aos-duration="1200"
                   >
-                    <span>LIHAT LOKASI</span>
-                    <div>
-                      <img
-                        src="./icons/circle-right.png"
-                        alt="cover"
-                        className="w-5 h-5 "
-                      />
-                    </div>
-                  </a>
-                </div>
-                <div
-                  className="p-5 rounded-2xl bg-[#0E1A0A] bg-opacity-50 text-white font-Poppins"
-                  data-aos="fade-up"
-                  data-aos-duration="1200"
-                >
-                  <p className="text-3xl font-medium tracking-wider mb-2">
-                    RESEPSI
-                  </p>
-                  <p className="text-sm md:text-base">
-                    Selasa, 23 Januari 2024
-                  </p>
-                  <p className="text-sm md:text-base my-2">13:00 WIB</p>
-                  <p className="text-sm md:text-base">
-                    Dk. Jebogo II RT.09 / RW.03
-                    <br />
-                    Sumurjomblangbogo Bojong
-                    <br /> Kab. Pekalongan
-                  </p>
-                  <a
-                    target="_blank"
-                    href="https://www.google.com/maps?q=-6.985318660736084,109.58277893066406&z=17&hl=id"
-                    className="border border-white rounded-full pl-3 pr-3 flex items-center w-fit gap-2 mt-4 py-1"
-                    rel="noreferrer"
-                  >
-                    <span>LIHAT LOKASI</span>
-                    <div>
-                      <img
-                        src="./icons/circle-right.png"
-                        alt="cover"
-                        className="w-5 h-5 "
-                      />
-                    </div>
-                  </a>
+                    <p className="text-3xl font-medium tracking-wider mb-2">
+                      Ramah Tamah
+                    </p>
+                    <p className="text-sm md:text-base">
+                      Senin, 22 Januari 2024
+                    </p>
+                    <p className="text-sm md:text-base my-2">Jam selera anda</p>
+                    <p className="text-sm md:text-base">
+                      Dk. Sawangan Dukuh RT.04 / RW.02 (Gg. Masjid Sawangan)
+                      <br />
+                      Sawangan Kec. Doro
+                      <br /> Kab. Pekalongan
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://www.google.com/maps?q=-6.985318660736084,109.58277893066406&z=17&hl=id"
+                      className="border border-white rounded-full pl-3 pr-3 flex items-center w-fit gap-2 mt-4 py-1"
+                      rel="noreferrer"
+                    >
+                      <span>LIHAT LOKASI</span>
+                      <div>
+                        <img
+                          src="./icons/circle-right.png"
+                          alt="cover"
+                          className="w-5 h-5 "
+                        />
+                      </div>
+                    </a>
+                  </div>
                 </div>
                 <CountdownComponent
                   targetYear={2024}
                   targetMonth={0}
-                  targetDate={23}
+                  targetDate={22}
                   targetHour={13}
                   targetMinute={0}
                 />
@@ -626,11 +600,11 @@ function App() {
                   data-aos-duration="1500"
                 >
                   <p className="text-3xl font-medium tracking-wide">
-                    OUR MOMENT
+                    Momen Pasangan
                   </p>
                   <p className="text-sm md:text-base text-justify">
-                    Momen berharga kami yang tersimpan di memori untuk bisa
-                    dikenang kembali di masa depan
+                    Momen berharga putra kami yang tersimpan di memori untuk
+                    bisa dikenang kembali di masa depan
                   </p>
                 </div>
                 <Fancybox
@@ -701,51 +675,7 @@ function App() {
                         />
                       </a>
                     </div>
-                    <div class="">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/05.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/05.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/06.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/06.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/07.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/07.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
+
                     <div class="col-span-2">
                       <a
                         data-aos="fade-up"
@@ -776,51 +706,7 @@ function App() {
                         />
                       </a>
                     </div>
-                    <div>
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/10.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/10.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/11.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/11.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/12.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/12.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
+
                     <div className="col-span-3">
                       <a
                         data-aos="fade-up"
@@ -858,7 +744,7 @@ function App() {
               <div className="mb-8 ">
                 <p className="text-3xl font-medium ">Ucapan & Doa</p>
                 <p className="my-4">
-                  Sapa dan kirim ucapan beserta doa terbaik untuk kami yang
+                  Sapa dan kirim ucapan beserta doa terbaik untuk pasangan yang
                   berbahagia
                 </p>
                 <button
@@ -875,7 +761,7 @@ function App() {
                   </div>
                 </button>
               </div>
-              <div data-aos="fade-up" data-aos-duration="1500">
+              {/* <div data-aos="fade-up" data-aos-duration="1500">
                 <p className="text-3xl font-medium ">Wedding Gift</p>
                 <p className="my-4 text-justify">
                   Doa restu anda merupakan karunia yang sangat berarti bagi
@@ -896,9 +782,9 @@ function App() {
                     />
                   </div>
                 </button>
-              </div>
+              </div> */}
             </div>
-            <div
+            {/* <div
               className={
                 !openGift
                   ? "hidden"
@@ -982,7 +868,7 @@ function App() {
                       />
                     </div>
                     <p className="text-sm md:text-base mt-2">
-                      Rumah Eli Setiani
+                      Rumah Ainul Yaqin
                     </p>
                     <p className="text-sm md:text-base mt-2 text-center">
                       Dk. Jebogo II RT.09 / RW.03 <br /> Sumurjomblangbogo
@@ -1009,7 +895,7 @@ function App() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </section>
           <section>
             <div className="w-full overflow-hidden relative z-0 gap-5 h-auto flex flex-col justify-start items-start py-8 font-Poppins text-white">
@@ -1028,12 +914,12 @@ function App() {
                 </div>
                 <p className="mb-8 text-justify ">
                   Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
-                  Bapak/Ibu/Saudara/i berkenan hadir di hari bahagia kami.
+                  Bapak/Ibu/Saudara/i berkenan hadir di hari bahagia anak kami.
                 </p>
                 <p className="font-semibold ">
                   Kami yang berbahagia, <br />
                   <br />
-                  Ainul & Elly
+                  Segenap keluarga H. Syakur & Hj. Musyaropah
                 </p>
               </div>
               <div className="w-full mb-12 font-Poppins">
