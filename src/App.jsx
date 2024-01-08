@@ -196,6 +196,20 @@ function App() {
                   >
                     <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
                     <img
+                      src="./photos/01.png"
+                      alt="cover"
+                      className="w-full object-cover"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div
+                    className="siper-slide-content"
+                    data-aos="fade-up"
+                    data-aos-duration="2100"
+                  >
+                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
+                    <img
                       src="./photos/02.png"
                       alt="cover"
                       className="w-full object-cover"
@@ -224,63 +238,7 @@ function App() {
                   >
                     <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
                     <img
-                      src="./photos/04.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/05.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/06.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/07.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/08.png"
+                      src="./photos/cover.png"
                       alt="cover"
                       className="w-full object-cover"
                     />
