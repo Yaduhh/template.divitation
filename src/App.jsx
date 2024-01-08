@@ -196,6 +196,20 @@ function App() {
                   >
                     <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
                     <img
+                      src="./photos/01.png"
+                      alt="cover"
+                      className="w-full object-cover"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div
+                    className="siper-slide-content"
+                    data-aos="fade-up"
+                    data-aos-duration="2100"
+                  >
+                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
+                    <img
                       src="./photos/02.png"
                       alt="cover"
                       className="w-full object-cover"
@@ -224,63 +238,7 @@ function App() {
                   >
                     <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
                     <img
-                      src="./photos/04.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/05.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/06.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/07.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/08.png"
+                      src="./photos/cover.png"
                       alt="cover"
                       className="w-full object-cover"
                     />
@@ -665,37 +623,7 @@ function App() {
                         className="h-[194px] w-full"
                       >
                         <img
-                          src="./photos/galeri/02.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="col-span-2 ">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/03.png"
-                        className="h-[194px] w-full "
-                      >
-                        <img
-                          src="./photos/galeri/03.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="col-span-3">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/04.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/04.png"
+                          src="./photos/galeri/05.png"
                           alt="cover"
                           className="w-full h-full rounded-xl object-cover"
                         />
@@ -710,22 +638,7 @@ function App() {
                         className="h-[218px] w-full"
                       >
                         <img
-                          src="./photos/galeri/05.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/06.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/06.png"
+                          src="./photos/galeri/02.png"
                           alt="cover"
                           className="w-full h-full rounded-xl object-cover"
                         />
@@ -746,6 +659,22 @@ function App() {
                         />
                       </a>
                     </div>
+                    <div class="col-span-3">
+                      <a
+                        data-aos="fade-up"
+                        data-aos-duration="1500"
+                        data-fancybox="gallery"
+                        href="./photos/galeri/04.png"
+                        className="h-[218px] w-full"
+                      >
+                        <img
+                          src="./photos/galeri/04.png"
+                          alt="cover"
+                          className="w-full h-full rounded-xl object-cover"
+                        />
+                      </a>
+                    </div>
+
                     <div class="col-span-2">
                       <a
                         data-aos="fade-up"
