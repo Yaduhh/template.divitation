@@ -126,28 +126,6 @@ function App() {
     window.location.href = whatsappURL;
   }
 
-  function handleAudio() {
-    const audio = document.getElementById("audio");
-    const disc = document.getElementById("disc");
-    if (playSong) {
-      audio
-        .play()
-        .then(() => setplaySong(true))
-        .catch(() => setplaySong(false));
-
-      disc.classList.add("animate-spin");
-    } else {
-      disc.classList.remove("animate-spin");
-      audio.pause();
-      setplaySong(false);
-    }
-  }
-
-  function handleCover() {
-    setOpenCover(true);
-    handleAudio();
-  }
-
   const queryParameters = new URLSearchParams(window.location.search);
   const kepada = queryParameters.get("to");
   return (
