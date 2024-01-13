@@ -17,7 +17,7 @@ export default function CoverScreen({ kepada, onClick }) {
               {kepada}
             </p>
             <p className="font-Poppins text-white text-sm lg:text-base">
-              Tanpa mengurangi rasa hormat, kami mengundang anda untuk
+              Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu untuk
               menghadiri acara pernikahan anak kami.
             </p>
           </div>

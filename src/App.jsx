@@ -499,7 +499,7 @@ function App() {
               <div className="w-full px-8 pt-8 flex flex-col gap-10">
                 <div>
                   <p className="text-3xl font-medium  mb-4 text-white font-Poppins text-center ">
-                    Kami mengundang anda
+                    Kami mengundang Bapak/Ibu
                   </p>
                   <p className="text-sm md:text-base mb-4 text-white font-Poppins text-center tracking-wider">
                     Pada acara
@@ -524,7 +524,7 @@ function App() {
                     </p>
                     <a
                       target="_blank"
-                      href="https://www.google.com/maps?q=-6.985318660736084,109.58277893066406&z=17&hl=id"
+                      href="https://maps.google.com/maps?q=-7.0282392501831055%2C109.66818237304688&z=17&hl=id"
                       className="border border-white rounded-full pl-3 pr-3 flex items-center w-fit gap-2 mt-4 py-1"
                       rel="noreferrer"
                     >
