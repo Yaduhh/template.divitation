@@ -1,5 +1,4 @@
 import "./App.css";
-import { BiLogoInstagram } from "react-icons/bi";
 import { useState } from "react";
 import { useEffect } from "react";
 import Aos from "aos";
@@ -7,32 +6,24 @@ import Navigationn from "./component/bottom-navigation";
 import classNames from "classnames";
 import CoverScreen from "./screens/cover";
 import DiskAudio from "./component/disk-audio";
-import Copy from "clipboard-copy";
-// import Swiper core and required modules
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper/modules";
-
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
-import Fancybox from "./component/wrapper/fancybox-wrapper";
 import toast, { Toaster } from "react-hot-toast";
 import CountdownComponent from "./component/countdown";
+import { FaInstagram } from "react-icons/fa";
+import Komentar from "./components/komentar/komentar";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function App() {
   const [openCover, setOpenCover] = useState(false);
   const [end, setEnd] = useState(false);
   const [playSong, setplaySong] = useState(false);
-
   const [isLastPage, setIsLastPage] = useState(false);
-  const [openGift, setOpenGift] = useState(false);
 
   function handleAudio() {
     const audio = document.getElementById("audio");
@@ -46,6 +37,15 @@ function App() {
       disc.classList.remove("animate-spin");
     }
   }
+
+  const arrayGambar = [
+    "./photos/img1.jpg",
+    "./photos/img2.JPG",
+    "./photos/img4.jpg",
+    "./photos/img6.jpg",
+    "./photos/img3.JPG",
+    "./photos/img5.jpg",
+  ];
 
   useEffect(() => {
     Aos.init({
@@ -106,26 +106,10 @@ function App() {
     handleAudio();
   }
 
-  function submitGreeting(e) {
-    e.preventDefault();
-
-    // const name = e.target.user.value;
-    // const message = e.target.text.value;
-
-    // Membuat pesan yang akan dikirimkan melalui URL WhatsApp
-    const greetingMessage = `Halo Ainul 👋 selamat atas pernikahannya, semoga menjadi pasangan yang sakinah mawaddah wa rohmah`;
-
-    // Membentuk URL WhatsApp
-    const whatsappURL = `https://wa.me/6285741977677?text=${encodeURIComponent(
-      greetingMessage
-    )}`;
-
-    // Mengarahkan pengguna ke URL WhatsApp
-    window.location.href = whatsappURL;
-  }
-
   const queryParameters = new URLSearchParams(window.location.search);
   const kepada = queryParameters.get("to");
+  const imageArray = ["./photos/01.jpg", "./photos/02.jpg", "./photos/03.jpg"];
+
   return (
     <>
       {/* Cover */}
@@ -133,7 +117,7 @@ function App() {
         className={
           end
             ? "hidden"
-            : "flex justify-center h-screen overflow-hidden bg-[#161D0E] bg-opacity-50"
+            : "flex justify-center h-screen overflow-hidden bg-[#000000] bg-opacity-50"
         }
         onTransitionEnd={() => setEnd(true)}
       >
@@ -156,7 +140,7 @@ function App() {
         className={classNames(
           !openCover
             ? "hidden"
-            : "flex justify-center w-full  bg-[#161D0E] bg-opacity-50"
+            : "flex justify-center w-full bg-[#000000] bg-opacity-40"
         )}
       >
         <div>
@@ -171,766 +155,506 @@ function App() {
             }
           >
             <DiskAudio
-              className="bg-[#161D0E]"
-              src={"audio/yarabb.mp3"}
+              className="bg-primary"
+              src={"audio/audio.mp3"}
               playSong={playSong}
               setplaySong={setplaySong}
             />
-            <Navigationn className={"bg-[#161D0E]"} />
+            <Navigationn className={"bg-[#211717]"} />
           </div>
-          <div className="relative ">
-            <div className="fixed max-w-3xl  top-0 h-screen w-full">
+          <div className="relative">
+            <div className="fixed max-w-3xl top-0 h-screen w-full overflow-hidden -z-50">
               <Swiper
-                // install Swiper modules
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                rewind={true}
+                navigation={false}
+                modules={[Navigation, Autoplay, Pagination]}
                 spaceBetween={0}
                 slidesPerView={1}
-                autoplay={{ delay: 5000 }}
-                className="h-screen "
+                pagination={{ clickable: false }}
+                autoplay={{ delay: 3000 }}
+                className="h-screen"
               >
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content aos-animate"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/01.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/02.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/03.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div
-                    className="siper-slide-content"
-                    data-aos="fade-up"
-                    data-aos-duration="2100"
-                  >
-                    <div className="absolute bg-[#0E1A0A] w-full h-full opacity-60"></div>
-                    <img
-                      src="./photos/cover.png"
-                      alt="cover"
-                      className="w-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
+                {imageArray.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <div
+                      className="swiper-slide-content aos-animate"
+                      data-aos="fade-up"
+                      data-aos-duration="2100"
+                    >
+                      <div className="absolute bg-[#000000] w-full h-full opacity-50"></div>
+                      <img
+                        src={image}
+                        alt={`slide-${index}`}
+                        className="w-screen object-fill"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
 
-          <section id="home">
-            <div className="w-full overflow-hidden relative -z-0 gap-5 h-screen flex flex-col justify-evenly items-start">
-              <div className="text-base font-Poppins text-white px-8 w-full pb-[20%]">
-                <p data-aos="fade-up" data-aos-duration="2100">
-                  Menikahkan anak kami
+          <section id="home" className="relative">
+            <div className="w-full overflow-hidden relative -z-0 gap-3 h-screen flex flex-col justify-center items-center text-white px-6">
+              <div className="text-center -mt-16">
+                <p
+                  className="font-Montserrat"
+                  data-aos="fade-up"
+                  data-aos-duration="1500"
+                >
+                  The Wedding Of
+                </p>
+                <h1
+                  className="font-Cardo text-4xl"
+                  data-aos="fade-up"
+                  data-aos-duration="1700"
+                >
+                  Mario & Venny
+                </h1>
+              </div>
+              <div
+                className="h-[1px] rounded-full w-2/3 bg-white"
+                data-aos="fade-up"
+                data-aos-duration="1800"
+              ></div>
+              <p
+                className="tracking-[.35em] text-2xl font-Montserrat"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
+                03.03.2024
+              </p>
+            </div>
+            <div
+              className="w-full absolute bottom-36 z-0 text-center inset-x-0 flex flex-col items-center gap-3 text-white animate-bounce"
+              data-aos="fade-up"
+              data-aos-duration="2200"
+            >
+              <img src="./icons/swipeup.svg" alt="swipe up" className="w-5" />
+              <p className="font-Montserrat">Swipe Up</p>
+            </div>
+          </section>
+
+          <section id="pasangan">
+            <div className="relative z-0 overflow-hidden w-full bg-white max-sm:min-h-screen h-auto flex flex-col justify-start items-center p-6 gap-5">
+              <img
+                src="./icons/bismillah.svg"
+                alt="bismillah"
+                className="pt-8"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              />
+              <img
+                src="./icons/aksenbg.svg"
+                alt="aksen"
+                className="inset-0 absolute -z-10 scale-110 md:w-full h-screen md:h-auto"
+              />
+              <div className="text-center font-Cardo text-primary">
+                <p
+                  className="text-lg font-medium"
+                  data-aos="fade-up"
+                  data-aos-duration="1200"
+                >
+                  Pasangan
                 </p>
                 <p
-                  className="text-3xl md:text-5xl font-Cardo my-2"
+                  className="text-3xl font-semibold"
+                  data-aos="fade-up"
+                  data-aos-duration="1400"
+                >
+                  Mempelai
+                </p>
+              </div>
+              <p
+                className="text-justify text-primary font-Cardo"
+                data-aos="fade-up"
+                data-aos-duration="1600"
+              >
+                Dengan segala puji bagi Allah yang telah menciptakan makhluk-Nya
+                berpasang - pasangan, Ya Allah izinkanlah kami merangkaikan
+                cinta yang engkau berikan dalam ikatan pernikahan.
+              </p>
+              <div className="w-full flex md:gap-12 md:p-6">
+                <div className="w-[50%] flex flex-col justify-between items-center gap-2">
+                  <img
+                    src="./photos/lakilaki.jpg"
+                    alt="laki laki"
+                    className="w-full bawahfoto border-secondary border-4"
+                    data-aos="fade-up"
+                    data-aos-duration="1800"
+                  />
+                  <p
+                    className="font-Cardo text-xl font-semibold text-primary"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                  >
+                    Mario Aditia
+                  </p>
+                  <p
+                    className="font-Cardo text-sm text-center text-primary"
+                    data-aos="fade-up"
+                    data-aos-duration="2100"
+                  >
+                    Putra kedua dari <br /> Bpk. Rhoip & Ibu Ningsih
+                  </p>
+                  <a
+                    href="https://www.instagram.com/marioaditya32/"
+                    target="_blank"
+                    className="flex items-center gap-2 font-Cardo"
+                    rel="noopener noreferrer"
+                    data-aos="fade-up"
+                    data-aos-duration="2200"
+                  >
+                    <FaInstagram size={20} />
+                    <p>Marioaditia32</p>
+                  </a>
+                </div>
+                <p className="font-Cardo text-secondary">&</p>
+                <div className="w-[50%] flex flex-col justify-between items-center gap-2">
+                  <img
+                    src="./photos/perempuan.jpg"
+                    alt="laki laki"
+                    className="w-full border-secondary border-4 bawahfoto"
+                    data-aos="fade-up"
+                    data-aos-duration="1800"
+                  />
+                  <p
+                    className="font-Cardo text-xl font-semibold text-primary text-center"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                  >
+                    Venny Noeraeni
+                  </p>
+                  <p
+                    className="font-Cardo text-sm text-center text-primary"
+                    data-aos="fade-up"
+                    data-aos-duration="2100"
+                  >
+                    Putri Pertama dari <br /> Bpk. Mohamad Usni (Alm) & Ibu
+                    Marleni
+                  </p>
+                  <a
+                    href="https://www.instagram.com/inivenny_/"
+                    target="_blank"
+                    className="flex items-center gap-2 font-Cardo"
+                    rel="noopener noreferrer"
+                    data-aos="fade-up"
+                    data-aos-duration="2200"
+                  >
+                    <FaInstagram size={20} />
+                    <p>@inivenny_</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="acara">
+            <div className="w-full h-auto min-h-screen md:h-auto bg-primary relative z-0 flex flex-col md:flex-row gap-8 items-center p-9 md:py-12 overflow-hidden">
+              <img
+                src="./icons/aksenwhite.svg"
+                alt="aksenwhite"
+                className="absolute inset-0 z-0 scale-110 md:w-full h-screen md:h-auto"
+              />
+              <div
+                className="bg-white/95 font-Cardo akadresepsi h-auto p-3 w-full flex flex-col justify-center items-center gap-2"
+                data-aos="fade-up"
+                data-aos-duration="500"
+              >
+                <img
+                  src="./icons/cincin.svg"
+                  alt="cincin"
+                  data-aos="fade-up"
+                  data-aos-duration="1300"
+                />
+                <p
+                  className="text-2xl"
+                  data-aos="fade-up"
+                  data-aos-duration="1500"
+                >
+                  Akad
+                </p>
+
+                <div
+                  className="font-Montserrat text-lg text-center"
+                  data-aos="fade-up"
+                  data-aos-duration="1700"
+                >
+                  <p>Minggu, 03 Maret 2024</p>
+                  <p>08.00 WIB s.d Selesai</p>
+                </div>
+                <div
+                  className="w-72 bg-primary h-[1px] rounded-full"
+                  data-aos="fade-up"
+                  data-aos-duration="1800"
+                ></div>
+                <div
+                  className="flex items-center gap-2"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                >
+                  <img src="./icons/gps.svg" alt="gps" className="w-4 h-4" />
+                  <p className="font-Montserrat">Gedung Graha Yadika C</p>
+                </div>
+                <p
+                  className="text-secondary font-Montserrat text-xs text-center font-medium"
                   data-aos="fade-up"
                   data-aos-duration="2100"
                 >
-                  Ainul & Elly
+                  Jl. Palem Ganda Asri RT 001 RW 001 <br />
+                  Karang Tengah, Kota Tangerang Banten
                 </p>
-                <p data-aos="fade-up" data-aos-duration="2100">
-                  Selasa, 23 Januari 2024
-                </p>
-                <div
-                  className="max-w-lg my-2 md:my-8"
+                <a
+                  href="https://www.google.com/maps/place/Graha+Yadika/@-6.2236734,106.7048466,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69fa1db5298b8f:0x72ace077fb5ca954!8m2!3d-6.2236787!4d106.7074215!16s%2Fg%2F11d_bjzb26?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary px-8 py-2 rounded-2xl flex items-center gap-2"
                   data-aos="fade-up"
                   data-aos-duration="2200"
                 >
                   <img
-                    src="./photos/home.png"
-                    alt="cover"
-                    className="w-full rounded-xl"
+                    src="./icons/lokasi.svg"
+                    alt="lokasi"
+                    className="h-4 w-4"
                   />
-                </div>
-                <div data-aos="fade-up" data-aos-duration="2300">
-                  <p className="text-sm lg:text-base">
-                    Maha suci Allah yang telah menciptakan makhluk-Nya
-                    berpasang-pasangan Ya Allah, perkenankanlah kami
-                    merangkaikan kasih sayang yang Kau ciptakan diantara kami
-                    untuk mengikuti Sunnah Rasul-Mu dalam rangka membentuk
-                    keluarga yang sakinah, mawaddah, warahmah.
+                  <p className="text-white font-Montserrat text-sm">
+                    Lihat Maps
                   </p>
-                </div>
+                </a>
               </div>
-            </div>
-          </section>
-          <section id="pasangan">
-            {/* pria */}
-            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 h-screen flex flex-col justify-center items-start ">
-              <div className="bg-[#0E1A0A] h-full bg-opacity-60 flex flex-col ml-8 text-white">
-                <div className="px-4 box-content pt-8 md:pt-16">
-                  <div className="flex justify-center mb-4">
-                    <div className="max-w-[204px] md:max-w-[240px]">
-                      <img
-                        className="mb-5 md:mb-0 rounded-full border-4 border-[#0E1A0A] w-full "
-                        src="/photos/man.png"
-                        alt="pria"
-                        data-aos="fade-up"
-                        data-aos-duration="2000"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <p
-                      className="text-3xl font-Cardo"
-                      data-aos="fade-up"
-                      data-aos-duration="1200"
-                    >
-                      Muhamad
-                      <br /> Ainul Yaqin S.Pd
-                    </p>
-                    <p
-                      className="font-Poppins text-sm my-8"
-                      data-aos="fade-up"
-                      data-aos-duration="1300"
-                    >
-                      Putra pertama kami
-                    </p>
-                    <p
-                      className="font-Poppins"
-                      data-aos="fade-up"
-                      data-aos-duration="1400"
-                    >
-                      Bapak H. Syakur &<br /> Ibu Hj. Musyaropah
-                    </p>
-                  </div>
-                  <a
-                    className="flex items-center gap-1 font-Cardo mt-12 md:mt-16"
-                    data-aos="fade-up"
-                    data-aos-duration="1500"
-                    href="https://www.instagram.com/yaqinanl/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <BiLogoInstagram size={22} />
-                    <p style={{ fontFamily: "Cardo" }}>@yaqinanl</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* wanita */}
-            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 h-screen flex flex-col justify-center items-end ">
-              <div className="bg-[#0E1A0A] h-full bg-opacity-60 flex flex-col mr-8 text-white">
-                <div className="px-4 box-content pt-8 md:pt-16">
-                  <div className="flex justify-center mb-4">
-                    <div className="max-w-[204px] md:max-w-[240px]">
-                      <img
-                        className="mb-5 md:mb-0 rounded-full border-4 border-white w-full "
-                        src="/photos/girl.png"
-                        alt="pria"
-                        data-aos="fade-up"
-                        data-aos-duration="2000"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <p
-                      className="text-3xl font-Cardo"
-                      data-aos="fade-up"
-                      data-aos-duration="1200"
-                    >
-                      Elly Setiani S.M
-                    </p>
-                    <p
-                      className="font-Poppins text-sm my-8"
-                      data-aos="fade-up"
-                      data-aos-duration="1300"
-                    >
-                      Putri ketiga dari
-                    </p>
-                    <p
-                      className="font-Poppins"
-                      data-aos="fade-up"
-                      data-aos-duration="1400"
-                    >
-                      Bapak Fuad &<br /> Ibu Dumilah
-                    </p>
-                  </div>
-                  <a
-                    className="flex items-center gap-1 font-Cardo mt-12 md:mt-16"
-                    data-aos="fade-up"
-                    data-aos-duration="1500"
-                    href="https://www.instagram.com/elysetiani_/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <BiLogoInstagram size={22} />
-                    <p style={{ fontFamily: "Cardo" }}>@elysetiani_</p>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section>
-            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 h-screen flex flex-col justify-start items-start ">
-              <div className="px-8 text-white font-Poppins mt-8">
-                <p
-                  className="text-3xl font-Poppins"
+              <div
+                className="bg-white/95 font-Cardo akadresepsi h-auto p-3 w-full flex flex-col justify-center items-center gap-2"
+                data-aos="fade-up"
+                data-aos-duration="500"
+              >
+                <img
+                  src="./icons/resepsi.svg"
+                  alt="resepsi"
                   data-aos="fade-up"
-                  data-aos-duration="700"
-                >
-                  Cerita Pasangan
-                </p>
+                  data-aos-duration="1300"
+                />
                 <p
-                  className="text-sm my-4 font-Poppins"
+                  className="text-2xl"
                   data-aos="fade-up"
-                  data-aos-duration="850"
+                  data-aos-duration="1500"
                 >
-                  Menikah bukan perlombaan, bukan soal cepat atau lambat.
-                  Tetapi, tentang siapa yang siap mengemban amanah yang besar.
+                  Resepsi
                 </p>
-                <Fancybox
-                  options={{
-                    Carousel: {
-                      infinite: false,
-                    },
-                  }}
-                >
-                  <div
-                    className="flex gap-4 w-full"
-                    data-aos="fade-up"
-                    data-aos-duration="1200"
-                  >
-                    <a data-fancybox="gallery" href="./photos/story1.png">
-                      <img
-                        src="./photos/story1.png"
-                        alt="cover"
-                        className="w-full rounded-xl"
-                      />
-                    </a>
-                    <a data-fancybox="gallery" href="./photos/story2.png">
-                      <img
-                        src="./photos/story2.png"
-                        alt="cover"
-                        className="w-full rounded-xl"
-                      />
-                    </a>
-                  </div>
-                </Fancybox>
+
                 <div
-                  className="bg-[#0E1A0A] w-full h-full bg-opacity-60 rounded-xl mt-4 p-4 overflow-auto max-h-80 "
+                  className="font-Montserrat text-lg text-center"
+                  data-aos="fade-up"
+                  data-aos-duration="1700"
+                >
+                  <p>Minggu, 03 Maret 2024</p>
+                  <p>11.00 s.d 14.00 WIB</p>
+                </div>
+                <div
+                  className="w-72 bg-primary h-[1px] rounded-full"
                   data-aos="fade-up"
                   data-aos-duration="1800"
+                ></div>
+                <div
+                  className="flex items-center gap-2"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
                 >
-                  <div className="flex flex-col text-sm gap-4">
-                    <div className="">
-                      <p className="font-Cardo">23 Januari 2022</p>
-                      <p className="my-1 font-semibold tracking-wider">
-                        AWAL BERTEMU
-                      </p>
-                      <p className="text-xm">
-                        Anak kami dipertemukan lantaran film “Filosofi Kopi 2:
-                        Ben & Jody” yang saat itu sedang mendapat animo yang
-                        besar di masyarakat.
-                      </p>
-                    </div>
-                    <div className="">
-                      <p className="font-Cardo">23 Maret 2022</p>
-                      <p className="my-1 font-semibold tracking-wider">
-                        MENJALIN HUBUNGAN
-                      </p>
-                      <p className="text-xm">
-                        Karena merasa cocok satu sama lain, maka anak kami
-                        memutuskan untuk mengenal lebih dekat.
-                      </p>
-                    </div>
-                    <div className="">
-                      <p className="font-Cardo">23 Mei 2023</p>
-                      <p className="my-1 font-semibold tracking-wider">
-                        BERTUNANGAN
-                      </p>
-                      <p className="text-xm">
-                        Setelah kurang lebih satu tahun saling mengenal,
-                        kemudian anak kami melangkah ke jenjang yang lebih
-                        serius dengan mempertemukan kedua keluarga.
-                      </p>
-                    </div>
-                    <div className="">
-                      <p className="font-Cardo">23 Januari 2024</p>
-                      <p className="my-1 font-semibold tracking-wider">
-                        HARI PERNIKAHAN
-                      </p>
-                      <p className="text-xm">
-                        Untuk menjalani babak baru di kehidupan, sebagaimana
-                        dipertemukannya Nabi Muhammad dengan Siti Khadijah.
-                        InsyaAllah anak kami akan melaksanakan pernikahan .
-                      </p>
-                    </div>
-                  </div>
+                  <img src="./icons/gps.svg" alt="gps" className="w-4 h-4" />
+                  <p className="font-Montserrat">Gedung Graha Yadika C</p>
                 </div>
+                <p
+                  className="text-secondary font-Montserrat text-xs text-center font-medium"
+                  data-aos="fade-up"
+                  data-aos-duration="2100"
+                >
+                  Jl. Palem Ganda Asri RT 001 RW 001 <br />
+                  Karang Tengah, Kota Tangerang Banten
+                </p>
+                <a
+                  href="https://www.google.com/maps/place/Graha+Yadika/@-6.2236734,106.7048466,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69fa1db5298b8f:0x72ace077fb5ca954!8m2!3d-6.2236787!4d106.7074215!16s%2Fg%2F11d_bjzb26?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-primary px-8 py-2 rounded-2xl flex items-center gap-2"
+                  data-aos="fade-up"
+                  data-aos-duration="2200"
+                >
+                  <img
+                    src="./icons/lokasi.svg"
+                    alt="lokasi"
+                    className="h-4 w-4"
+                  />
+                  <p className="text-white font-Montserrat text-sm">
+                    Lihat Maps
+                  </p>
+                </a>
               </div>
             </div>
           </section>
-          <section id="acara">
-            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 h-screen flex flex-col justify-center items-start ">
-              <div className="w-full px-8 pt-8 flex flex-col gap-10">
-                <div>
-                  <p className="text-3xl font-medium  mb-4 text-white font-Poppins text-center ">
-                    Kami mengundang Bapak/Ibu
-                  </p>
-                  <p className="text-sm md:text-base mb-4 text-white font-Poppins text-center tracking-wider">
-                    Pada acara
-                  </p>
-                  <div
-                    className="p-5 rounded-2xl bg-[#0E1A0A] bg-opacity-50 text-white font-Poppins"
-                    data-aos="fade-up"
-                    data-aos-duration="1200"
-                  >
-                    <p className="text-3xl font-medium tracking-wider mb-2">
-                      Ramah Tamah
-                    </p>
-                    <p className="text-sm md:text-base">
-                      Senin, 22 Januari 2024
-                    </p>
-                    <p className="text-sm md:text-base my-2">Jam selera anda</p>
-                    <p className="text-sm md:text-base">
-                      Dk. Sawangan Dukuh RT.04 / RW.02 (Gg. Masjid Sawangan)
-                      <br />
-                      Sawangan Kec. Doro
-                      <br /> Kab. Pekalongan
-                    </p>
-                    <a
-                      target="_blank"
-                      href="https://maps.google.com/maps?q=-7.0282392501831055%2C109.66818237304688&z=17&hl=id"
-                      className="border border-white rounded-full pl-3 pr-3 flex items-center w-fit gap-2 mt-4 py-1"
-                      rel="noreferrer"
-                    >
-                      <span>LIHAT LOKASI</span>
-                      <div>
-                        <img
-                          src="./icons/circle-right.png"
-                          alt="cover"
-                          className="w-5 h-5 "
-                        />
-                      </div>
-                    </a>
-                  </div>
+
+          <section id="hitungmundur">
+            <div className="w-full h-auto min-h-screen relative z-0 overflow-hidden flex flex-col items-center p-6 md:p-32">
+              <div
+                className="bg-white/20 shadow-inner shadow-white/30 gap-5 backdrop-blur countdownn w-full h-[95%] pt-14 flex flex-col items-center p-6"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <img
+                  src="./icons/countdown.svg"
+                  alt="hitungmundur"
+                  className="w-36"
+                  data-aos="fade-up"
+                  data-aos-duration="1700"
+                />
+                <div
+                  className="text-white font-Cardo"
+                  data-aos="fade-up"
+                  data-aos-duration="1900"
+                >
+                  <p className="text-center">Hitung Mundur</p>
+                  <p className="text-center text-3xl">Hari Bahagia Kami</p>
                 </div>
                 <CountdownComponent
-                  targetYear={2024}
-                  targetMonth={0}
-                  targetDate={22}
-                  targetHour={13}
+                  targetDate={3}
+                  targetHour={8}
                   targetMinute={0}
+                  targetMonth={2}
+                  targetYear={2024}
                 />
               </div>
             </div>
           </section>
+
           <section id="galeri">
-            <div className="w-full overflow-hidden z-0 relative gap-4 md:gap-3 flex flex-col justify-start items-start ">
-              <div className="flex flex-col items-center px-8 pt-4 text-white font-Poppins">
-                <div
-                  className="mt-8"
+            <div className="w-full h-auto bg-[#000000]/50 flex flex-col items-center p-6 gap-5 backdrop-blur-sm">
+              <div className="w-full h-56 md:h-full overflow-hidden rounded-2xl shaodw shadow-white/20 shadow-lg">
+                <img
+                  src="./photos/img8.JPG"
+                  alt="fotoutama"
+                  loading="lazy"
+                  className="w-full"
                   data-aos="fade-up"
-                  data-aos-duration="1500"
-                >
-                  <p className="text-3xl font-medium tracking-wide">
-                    Momen Pasangan
-                  </p>
-                  <p className="text-sm md:text-base text-justify">
-                    Momen berharga putra kami yang tersimpan di memori untuk
-                    bisa dikenang kembali di masa depan
-                  </p>
-                </div>
-                <Fancybox
-                  options={{
-                    Carousel: {
-                      infinite: false,
-                    },
-                  }}
-                >
-                  <div className="grid grid-cols-3 gap-4 mt-4">
-                    <div class="col-span-3">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        className="w-full"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/01.png"
-                      >
-                        <img
-                          src="./photos/galeri/01.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/02.png"
-                        className="h-[194px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/02.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="col-span-2 ">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/03.png"
-                        className="h-[194px] w-full "
-                      >
-                        <img
-                          src="./photos/galeri/03.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div class="col-span-3">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/04.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/04.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-
-                    <div class="col-span-2">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/08.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/08.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                    <div>
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/09.png"
-                        className="h-[218px] w-full"
-                      >
-                        <img
-                          src="./photos/galeri/09.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-
-                    <div className="col-span-3">
-                      <a
-                        data-aos="fade-up"
-                        data-aos-duration="1500"
-                        data-fancybox="gallery"
-                        href="./photos/galeri/13.png"
-                        className=" w-full"
-                      >
-                        <img
-                          src="./photos/galeri/13.png"
-                          alt="cover"
-                          className="w-full h-full rounded-xl object-cover"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </Fancybox>
+                  data-aos-duration="1200"
+                />
               </div>
-            </div>
-          </section>
-          <section id="ucapan">
-            <div className="w-full  relative z-0 gap-5 h-auto flex flex-col justify-start items-start py-8 px-8 font-Poppins text-white">
-              <div className="mb-8" data-aos="fade-up" data-aos-duration="1200">
-                <p className="text-justify">
-                  “I love you, I am who I am because of you. You are every
-                  reason, every hope and every dream. I’ve ever had and no
-                  matter what happens to us in the future, every day we are
-                  together is the greatest day of my life. I will always be
-                  yours.”
-                </p>
-                <p className="text-right font-semibold mt-4 mr-4">
-                  Ainul & Elly
-                </p>
-              </div>
-              <div className="mb-8 ">
-                <p className="text-3xl font-medium ">Ucapan & Doa</p>
-                <p className="my-4">
-                  Sapa dan kirim ucapan beserta doa terbaik untuk pasangan yang
-                  berbahagia
-                </p>
-                <button
-                  onClick={submitGreeting}
-                  className="border border-white rounded-full pl-3 pr-3 py-1 flex items-center w-fit gap-2 mt-4"
-                >
-                  <span>KIRIM UCAPAN</span>
-                  <div>
-                    <img
-                      src="./icons/white-chevron-right.png"
-                      alt="cover"
-                      className="w-5 h-5 "
-                    />
-                  </div>
-                </button>
-              </div>
-              {/* <div data-aos="fade-up" data-aos-duration="1500">
-                <p className="text-3xl font-medium ">Wedding Gift</p>
-                <p className="my-4 text-justify">
-                  Doa restu anda merupakan karunia yang sangat berarti bagi
-                  kami. Namun jika memberi adalah ungkapan tanda kasih anda,
-                  kami akan senang hati menerimanya yang tentu akan semakin
-                  melengkapi kebahagiaan kami.
-                </p>
-                <button
-                  onClick={() => setOpenGift(!openGift)}
-                  className="border border-white rounded-full pl-3 pr-3 py-1 flex items-center w-fit gap-2 mt-4"
-                >
-                  <span>KLIK DISINI</span>
-                  <div>
-                    <img
-                      src="./icons/click.png"
-                      alt="cover"
-                      className="w-5 h-5 "
-                    />
-                  </div>
-                </button>
-              </div> */}
-            </div>
-            {/* <div
-              className={
-                !openGift
-                  ? "hidden"
-                  : "w-full overflow-hidden relative z-0 gap-5 h-screen flex flex-col justify-center items-center px-16 font-Poppins text-white"
-              }
-            >
-              <div
-                className="bg-[#0E1A0A] bg-opacity-50 rounded-3xl w-full flex flex-col justify-evenly h-full"
-                data-aos="fade-up"
-                data-aos-duration="1500"
-              >
-                <div>
-                  <p className="text-xl font-semibold text-center mb-8">
-                    Amplop Digital
-                  </p>
-                  <div className="flex flex-col items-center mb-8">
-                    <div className="w-[120px]">
-                      <img
-                        src="./icons/BCA.png"
-                        alt="cover"
-                        className="w-full h-full rounded-xl object-cover"
-                      />
-                    </div>
-                    <p className="text-sm md:text-base mt-2">Eli Setiani</p>
-                    <p className="text-sm md:text-base mt-2">2500903581</p>
-                    <button
-                      onClick={() => {
-                        Copy("2500903581");
-                        toast.success("Nomor rekening BCA berhasil disalin");
-                      }}
-                      className="border border-white rounded-full pl-3 pr-3 py-1 flex items-center w-fit gap-2 mt-4"
-                    >
-                      <span className="text-sm">SALIN</span>
-                      <div>
-                        <img
-                          src="./icons/copy.png"
-                          alt="cover"
-                          className="w-5 h-5 "
-                        />
-                      </div>
-                    </button>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <div className="w-[120px]">
-                      <img
-                        src="./icons/gopay.png"
-                        alt="cover"
-                        className="w-full h-full rounded-xl object-cover"
-                      />
-                    </div>
-                    <p className="text-sm md:text-base mt-2">Eli Setiani</p>
-                    <p className="text-sm md:text-base mt-2">085879100709</p>
-                    <button
-                      onClick={() => {
-                        Copy("085879100709");
-                        toast.success("Nomor GoPay berhasil disalin");
-                      }}
-                      className="border border-white rounded-full pl-3 pr-3 py-1 flex items-center w-fit gap-2 mt-4"
-                    >
-                      <span className="text-sm">SALIN</span>
-                      <div>
-                        <img
-                          src="./icons/copy.png"
-                          alt="cover"
-                          className="w-5 h-5 "
-                        />
-                      </div>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-xl font-semibold text-center mb-4">
-                    Kirim Kado
-                  </p>
-                  <div className="flex flex-col items-center">
-                    <div className="w-[60px]">
-                      <img
-                        src="./icons/gift.png"
-                        alt="cover"
-                        className="w-full h-full rounded-xl object-cover"
-                      />
-                    </div>
-                    <p className="text-sm md:text-base mt-2">
-                      Rumah Ainul Yaqin
-                    </p>
-                    <p className="text-sm md:text-base mt-2 text-center">
-                      Dk. Jebogo II RT.09 / RW.03 <br /> Sumurjomblangbogo
-                      Bojong <br /> Kab. Pekalongan
-                    </p>
-                    <button
-                      onClick={() => {
-                        Copy(
-                          "Dk. Jebogo II RT.09 / RW.03,  Sumurjomblangbogo Bojong, Kab. Pekalongan"
-                        );
-                        toast.success("Alamat berhasil disalin");
-                      }}
-                      className="border border-white rounded-full pl-3 pr-3 py-1 flex items-center w-fit gap-2 mt-4"
-                    >
-                      <span className="text-sm">SALIN</span>
-                      <div>
-                        <img
-                          src="./icons/copy.png"
-                          alt="cover"
-                          className="w-5 h-5 "
-                        />
-                      </div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-          </section>
-          <section>
-            <div className="w-full overflow-hidden relative z-0 gap-5 h-auto flex flex-col justify-start items-start py-8 font-Poppins text-white">
-              <div
-                className="px-8 mb-20"
-                data-aos="fade-up"
-                data-aos-duration="1500"
-              >
-                <p className="text-2xl mb-4">Terimakasih</p>
-                <div className="w-full mb-4">
+              <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                {arrayGambar.map((url, index) => (
                   <img
-                    src="./photos/end.png"
-                    alt="cover"
-                    className="w-full object-cover"
+                    key={index}
+                    src={url}
+                    alt={`gambar-${index}`}
+                    className="w-auto h-auto rounded-2xl shadow shadow-white/50"
+                    quality={50}
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
                   />
-                </div>
-                <p className="mb-8 text-justify ">
-                  Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
-                  Bapak/Ibu/Saudara/i berkenan hadir di hari bahagia anak kami.
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="ucapan">
+            <div className="relative z-0 overflow-hidden w-full bg-white h-auto min-h-screen flex flex-col justify-start items-center p-6 gap-5">
+              <img
+                src="./icons/aksenbg.svg"
+                alt="aksen"
+                className="inset-0 absolute -z-10 scale-110 md:w-full h-screen md:h-auto"
+              />
+              <div
+                className="text-center"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <p className="text-lg font-Montserrat font-medium">
+                  Do'a & Ucapan
                 </p>
-                <p className="font-semibold ">
-                  Kami yang berbahagia, <br />
-                  <br />
-                  Segenap keluarga H. Syakur & Hj. Musyaropah
+                <p className="text-3xl font-Cardo">Teruntuk Mempelai</p>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="1700"
+                className="w-full"
+              >
+                <div className="w-auto">
+                  <Komentar />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="penutup">
+            <div className="w-full h-screen flex flex-col gap-3 justify-center items-center overflow-hidden relative z-0 bg-[#000000]">
+              <img
+                src="./photos/bgpenutup.png"
+                alt="penutup"
+                className="w-full absolute -z-10 inset-0 opacity-50"
+              />
+              <img
+                src="./icons/hiasanpenutup.svg"
+                alt="hiasanpenutup"
+                className="-mt-20 2xl:w-80"
+                data-aos="fade-up"
+                data-aos-duration="1700"
+              />
+              <div
+                className="text-white font-Cardo uppercase text-lg text-center"
+                data-aos="fade-up"
+                data-aos-duration="1900"
+              >
+                <p>
+                  Terima Kasih <br /> Atas Kehadiran & Do'a Restunya Kami yang
+                  Berbahaga
                 </p>
               </div>
-              <div className="w-full mb-12 font-Poppins">
-                <div className="flex justify-center w-full h-10 ">
-                  <div className="flex flex-col items-center">
-                    <div className="w-24 mb-1">
-                      <img
-                        src="./icons/divitation.png"
-                        alt="cover"
-                        className="w-full object-cover"
-                      />
-                    </div>
-                    <p className="text-xs text-center my-1">
-                      Digital Wedding Invitation © 2023. All Rights <br />
-                      Reserved
-                    </p>
-                    <div className="flex gap-2 mt-1">
-                      <a
-                        target="_blank"
-                        href="https://www.tiktok.com/@divitation_official"
-                        className="w-6"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="./icons/tiktok.png"
-                          alt="cover"
-                          className="w-full object-cover"
-                        />
-                      </a>
-                      <a
-                        target="_blank"
-                        href="https://www.instagram.com/divitation_official"
-                        className="w-6"
-                        rel="noreferrer"
-                      >
-                        <img
-                          src="./icons/ig.png"
-                          alt="cover"
-                          className="w-full object-cover"
-                        />
-                      </a>
-                      <a
-                        href={`https://wa.me/6282328304538?text=Haloo+Divitation👋`}
-                        className="w-6"
-                      >
-                        <img
-                          src="./icons/wa.png"
-                          alt="cover"
-                          className="w-full object-cover"
-                        />
-                      </a>
-                    </div>
-                  </div>
+              <p
+                className="text-4xl text-white font-Cardo text-center pt-10"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+              >
+                Mario & Venny
+              </p>
+
+              <div
+                className="w-full flex flex-col items-center gap-2 absolute bottom-10"
+                data-aos="fade-up"
+                data-aos-duration="2200"
+              >
+                <img
+                  src="./icons/divitationlogo.svg"
+                  alt="logo divitation"
+                  className="w-24"
+                />
+                <p className="text-white font-Montserrat text-center text-sm">
+                  Digital Wedding Invitation © 2024 <br />
+                  All Rights Reserved
+                </p>
+                <div className="flex items-center gap-5 w-full justify-center">
+                  <a
+                    href="https://www.tiktok.com/@divitation_official?is_from_webapp=1&sender_device=pc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="./icons/tiktok.svg"
+                      alt="tiktok"
+                      className="w-8"
+                    />
+                  </a>
+                  <img src="./icons/hr.svg" alt="hr" className="w-1" />
+                  <a
+                    href="https://www.instagram.com/divitation_official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="./icons/ig.svg" alt="ig" className="w-8" />
+                  </a>
+                  <img src="./icons/hr.svg" alt="hr" className="w-1" />
+                  <a
+                    href="https://wa.me/628990656996"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="./icons/wa.svg" alt="wa" className="w-8" />
+                  </a>
                 </div>
               </div>
             </div>

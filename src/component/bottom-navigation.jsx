@@ -4,7 +4,7 @@ import React from "react";
 export default function NavigationBottom({ className }) {
   return (
     <div className="relative">
-      <div className="fixed bottom-8 z-[9999] max-w-3xl w-full max-md:w-screen flex justify-center px-8">
+      <div className="fixed bottom-5 z-[9999] max-w-3xl w-full max-md:w-screen flex justify-center px-8">
         <div
           className={classNames(
             `w-full flex justify-around rounded-xl py-3`,

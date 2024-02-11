@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      primary: "#850E35",
-      secondary: "#EE6983",
-      accent: "#FFFAEA",
-      third: "#C27F5C",
+      primary: "#211717",
+      secondary: "#A34A28",
+      accent: "#F58B54",
+      third: "#DFDDC7",
       white: "#FFFFFF",
     },
 
@@ -15,7 +15,8 @@ module.exports = {
       "DM-Serif-display": ['"DM Serif Display"', "serif"],
       "Ribeye-marrow": ['"Ribeye Marrow"', "cursive"],
       Cardo: ['"Cardo"', "serif"],
-      Poppins: [ 'Poppins', 'sans-serif']
+      Poppins: ["Poppins", "sans-serif"],
+      Montserrat: ["Montserrat", "sans-serif"],
     },
   },
   plugins: [],
